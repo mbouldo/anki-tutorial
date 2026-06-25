@@ -87,9 +87,20 @@ function compileMarkdown(md = "") {
     return `<h2 class="mt-12 text-2xl font-semibold tracking-tight">${t}</h2>`;
   });
 
-  // bold
-  html = html.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
 
+  // inline code
+html = html.replace(
+  /`([^`]+)`/g,
+  `<code class="font-mono bg-zinc-200 px-1.5 py-0.5 rounded text-[0.95em]">$1</code>`
+);
+
+// bold
+html = html.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+
+// italic
+html = html.replace(/(^|[^*])\*(?!\*)(.+?)\*/g, "$1<em>$2</em>");
+
+  
   // italic (simple)
   html = html.replace(/(^|[^*])\*(?!\*)(.+?)\*/g, "$1<em>$2</em>");
 
@@ -117,6 +128,8 @@ function compileMarkdown(md = "") {
       return `<p class="leading-8 text-zinc-700 my-4">${t}</p>`;
     })
     .join("\n");
+
+  // html = html.replace(/\n/g, "<br>");
 
   return html;
 }

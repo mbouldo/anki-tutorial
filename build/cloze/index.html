@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="/src/build/output.css" rel="stylesheet">
+  <title>Anki Tutorial</title>
+</head>
+<body class="bg-zinc-50 text-zinc-900">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 border-b border-zinc-200 bg-white/90 backdrop-blur">
+    <div class="mx-auto max-w-7xl px-8 py-5">
+      <h1 class="text-2xl font-semibold tracking-tight">
+        Anki Tutorial
+      </h1>
+    </div>
+  </header>
+
+  <div class="mx-auto flex max-w-7xl">
+
+    <!-- Sidebar -->
+    
+<aside class="sticky top-18.25 h-[calc(100vh-73px)] w-96 shrink-0 overflow-y-auto border-r border-zinc-200 bg-white">
+  <div class="p-6">
+
+    <div class="mb-8">
+      <h3 class="sidebar-heading">Intro</h3>
+
+      <nav class="space-y-1">
+
+        <a href="/src/build/"
+           class="nav-link ">
+          1. Intro
+        </a>
+      
+      </nav>
+    </div>
+
+    <div class="mb-8">
+      <h3 class="sidebar-heading">Setup</h3>
+
+      <nav class="space-y-1">
+
+        <a href="/src/build/install-anki/"
+           class="nav-link ">
+          1. Install Anki
+        </a>
+      
+        <a href="/src/build/setup-sync/"
+           class="nav-link ">
+          2. Eanble Syncing
+        </a>
+      
+        <a href="/src/build/configure-settings/"
+           class="nav-link ">
+          3. Configure Settings
+        </a>
+      
+      </nav>
+    </div>
+
+    <div class="mb-8">
+      <h3 class="sidebar-heading">Basics</h3>
+
+      <nav class="space-y-1">
+
+        <a href="/src/build/retrain-fsrs/"
+           class="nav-link ">
+          1. Retrain FSRS
+        </a>
+      
+        <a href="/src/build/rename-deck/"
+           class="nav-link ">
+          2. Rename a Deck
+        </a>
+      
+        <a href="/src/build/cloze/"
+           class="nav-link nav-link-active">
+          3. Create an Cloze Deletion Card
+        </a>
+      
+        <a href="/src/build/image-occlusion/"
+           class="nav-link ">
+          4. Create an Image Occlusion Card
+        </a>
+      
+      </nav>
+    </div>
+
+  </div>
+</aside>
+
+    <!-- <aside class="sticky top-18.25 h-[calc(100vh-73px)] w-96 shrink-0 overflow-y-auto border-r border-zinc-200 bg-white">
+      <div class="p-6">
+
+        <div class="mb-8">
+          <h3 class="sidebar-heading">
+            Setup
+          </h3>
+
+          <nav class="space-y-1">
+            <a href="#" class="nav-link nav-link-active">
+              1. Install Anki
+            </a>
+
+            <a href="#" class="nav-link">
+              2. Turn on Sync
+            </a>
+
+            <a href="#" class="nav-link">
+              3. Enable FSRS
+            </a>
+          </nav>
+        </div>
+      </div>
+    </aside> -->
+
+    <!-- Content -->
+    <main class="flex-1 px-12 py-10">
+
+      <div class="mx-auto max-w-4xl">
+
+        <!-- Breadcrumb -->
+         
+<div class="mb-8 text-sm text-zinc-500">
+  <span class="font-medium text-zinc-900">Basics</span>
+  <span class="mx-2">/</span>
+  Create an Cloze Deletion Card
+</div>
+
+        <!-- <div class="mb-8 text-sm text-zinc-500">
+          <span class="font-medium text-zinc-900">Setup</span>
+          <span class="mx-2">/</span>
+          Install Anki
+        </div> -->
+
+        <!-- Video Player Wrapper -->
+        <section id="playerWrap" class="aspect-video w-full overflow-hidden rounded-xl bg-black relative " {{HIDE_INDEX}}>
+
+          <!-- progress bar segements-->
+          <div id="progressBar" class="absolute top-2 left-1/2 -translate-x-1/2 flex gap-1 z-20"></div>
+
+          <!-- step counter box (n/length) -->
+          <div id="currentStepBox"
+            class="absolute top-3 left-3 z-10 rounded-lg bg-black/60 text-white text-xs font-medium px-2.5 py-1.5 tabular-nums">
+          </div>
+
+      
+<video id="player"
+  src="/src/videos/cloze.mp4"
+  class="absolute inset-0 w-full h-full object-contain block"
+  preload="auto"
+  playsinline
+  muted></video>
+
+
+          <!-- caption -->
+          <div id="caption" class="absolute bottom-0 left-0 right-0 px-4 py-3 text-white text-md
+                                    bg-gray-900 
+                                    opacity-0 translate-y-2 transition-all duration-300 ease-out">
+          </div>
+
+          <!-- prev -->
+          <button id="prevBtn" aria-label="Previous step"
+            class="absolute left-3 top-1/2 -translate-y-1/2 z-10 rounded-full bg-black/60 text-white ">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+              class="size-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+            </svg>
+          </button>
+
+          <!-- next -->
+          <button id="nextBtn" aria-label="Next step"
+            class="absolute right-3 top-1/2 -translate-y-1/2 z-10 rounded-full bg-black/60 text-white ">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+              class="size-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+            </svg>
+          </button>
+
+          <!-- fullscreen -->
+          <button id="expandToFullScreenBtn" aria-label="Toggle fullscreen"
+            class="absolute top-3 right-3 z-10 cursor-pointer
+                                    rounded-lg bg-black/60 text-white p-2 hover:bg-black/80
+                                    transition-all duration-200
+                                    focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-black">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+              class="size-6">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15" />
+            </svg>
+          </button>
+
+        </section>
+
+        <!-- Article -->
+        <article class="mt-10 w-[800px]  h-screen" >
+        <h2 class="mt-12 text-2xl font-semibold tracking-tight">Creating Cloze Deletion Cards</h2>
+<p class="leading-8 text-zinc-700 my-4">Cloze deletion cards hide portions of text and ask you to recall the missing information. They are one of the most commonly used card types because they are fast to create and work well for facts, lists, and concepts, and scale better than a simple front + back card.</p>
+<p class="leading-8 text-zinc-700 my-4">To create a cloze card, select the text you want to hide and click the <strong>Cloze</strong> button, or manually wrap the text with cloze syntax.</p>
+<p class="leading-8 text-zinc-700 my-4">Examples:</p>
+<p class="leading-8 text-zinc-700 my-4"><code class="font-mono bg-zinc-200 px-1.5 py-0.5 rounded text-[0.95em]">The capital of France is {{c1::Paris}}</code></p>
+<p class="leading-8 text-zinc-700 my-4">= <em>The capital of France is _____</em></p>
+<p class="leading-8 text-zinc-700 my-4"><code class="font-mono bg-zinc-200 px-1.5 py-0.5 rounded text-[0.95em]">{{c1::Paris}} is the capital of {{c2::France}}</code></p>
+<p class="leading-8 text-zinc-700 my-4">= <em>_____ is the capital of France</em> && <em>Paris is the capital of _____</em> (two cards, with two different blanks)</p>
+<p class="leading-8 text-zinc-700 my-4"><code class="font-mono bg-zinc-200 px-1.5 py-0.5 rounded text-[0.95em]">The {{c1::heart}} pumps {{c1::blood}} throughout the body</code></p>
+<p class="leading-8 text-zinc-700 my-4">= <em>The _____ pumps _____ throughout the body</em> (two blanks at card)</p>
+<p class="leading-8 text-zinc-700 my-4">In the first example, one card is created. In the second example, two separate cards are created because <code class="font-mono bg-zinc-200 px-1.5 py-0.5 rounded text-[0.95em]">c1</code> and <code class="font-mono bg-zinc-200 px-1.5 py-0.5 rounded text-[0.95em]">c2</code> are different cloze numbers. In the third example, both deletions appear on the same card because they share the same cloze number (<code class="font-mono bg-zinc-200 px-1.5 py-0.5 rounded text-[0.95em]">c1</code>).</p>
+<li class='list-disc pl-2 ml-5'>Most commonly used Anki note type</li>
+<li class='list-disc pl-2 ml-5'><code class="font-mono bg-zinc-200 px-1.5 py-0.5 rounded text-[0.95em]">c1</code>, <code class="font-mono bg-zinc-200 px-1.5 py-0.5 rounded text-[0.95em]">c2</code>, <code class="font-mono bg-zinc-200 px-1.5 py-0.5 rounded text-[0.95em]">c3</code>, etc. create separate cards</li>
+<li class='list-disc pl-2 ml-5'>Multiple <code class="font-mono bg-zinc-200 px-1.5 py-0.5 rounded text-[0.95em]">c1</code> deletions are hidden together on the same card</li>
+<li class='list-disc pl-2 ml-5'>Best for facts, lists, and definitions</li>
+
+          <!-- <p class="leading-8 text-zinc-700">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+            pellentesque efficitur lectus, nec pulvinar justo porttitor non.
+            Aliquam scelerisque mi nec sagittis pretium.
+          </p>
+
+          <p class="mt-6 leading-8 text-zinc-700">
+            Cras aliquet justo et orci porta, ut ornare enim egestas. Mauris
+            cursus augue non imperdiet auctor, massa turpis efficitur neque,
+            ac semper tellus lorem nec libero.
+          </p>
+
+          <h2 class="mt-12 text-2xl font-semibold tracking-tight">
+            Why Install Anki?
+          </h2>
+
+          <p class="mt-4 leading-8 text-zinc-700">
+            Anki is the standard spaced repetition platform used by most medical
+            students. Setting it up correctly now avoids synchronization and
+            scheduling issues later.
+          </p>
+
+          <ul class="mt-6 space-y-3 text-zinc-700">
+            <li>• Free and open source</li>
+            <li>• Syncs across devices</li>
+            <li>• Supports FSRS scheduling</li>
+            <li>• Works with AnKing</li>
+          </ul> -->
+
+        </article>
+
+        <!-- Footer Nav -->
+        <!-- <div class="mt-16 flex items-center justify-between border-t border-zinc-200 pt-8">
+
+          <button class="btn btn-secondary">
+            Previous
+          </button>
+
+          <button class="btn btn-primary">
+            Next
+          </button>
+
+        </div> -->
+
+      </div>
+
+    </main>
+
+  </div>
+  <script>
+     const CONFIG_VIDEO_STOPS = [
+  {
+    "t": 0,
+    "text": "1. Select *'Add'* in the top bar"
+  },
+  {
+    "t": 4,
+    "text": "2. Change your note type to *'Cloze'* by selecting the type box (mine is currently set to Basic)"
+  },
+  {
+    "t": 8.5,
+    "text": "3. Make sure *'Cloze'* is selected and click *Choose*"
+  },
+  {
+    "t": 10.5,
+    "text": "4. Enter or paste the text you want to study"
+  },
+  {
+    "t": 13.5,
+    "text": "5. Highlight the word or phrase you want to hide"
+  },
+  {
+    "t": 16,
+    "text": "6. Click the *[...]* button or press *Ctrl+Shift+C* - this will be your first 'fill in the blank'"
+  },
+  {
+    "t": 18,
+    "text": "7. Repeat for additional cloze deletions as needed"
+  },
+  {
+    "t": 21.5,
+    "text": "8. Review the generated cloze fields in your text"
+  },
+  {
+    "t": 21.5,
+    "text": "9. Additionally, you can copy any images you want to show up once the answer is shown and add them to the 'Extras Field'"
+  },
+  {
+    "t": 31.6,
+    "text": "10. Click *Add* to create the card and return to the main screen"
+  },
+  {
+    "t": 36,
+    "text": "11. Select the deck that you just created the cards in (mine is called Default)"
+  },
+  {
+    "t": 44.1,
+    "text": "12. Study your cards"
+  }
+];
+    //   const CONFIG_VIDEO_STOPS = [
+    //     { t: 0, text: "1. Select the *gear icon* on the deck you want to rename" },
+    //     { t: 1.250, text: `2. Select the *"Rename"* option` },
+    //     { t: 3, text: "3. Enter in you new deck name" },
+    //     { t: 6, text: "4. Click Ok" },
+    //   ];
+  </script>
+  <script src="/src/build/core.js"></script>
+</body>
+</html>

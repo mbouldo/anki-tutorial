@@ -9,4 +9,3 @@ This tutorial is designed around short keyframe animations and explanations so y
 I hope it's helpful. If you have questions, reach out any time!
 
 > Martin Bouldo (martin.bouldo@nyulangone.org)
-n
