@@ -30,7 +30,7 @@
       <nav class="space-y-1">
 
         <a href="/src/build/"
-           class="nav-link nav-link-active">
+           class="nav-link ">
           1. Intro
         </a>
       
@@ -48,7 +48,7 @@
         </a>
       
         <a href="/src/build/setup-sync/"
-           class="nav-link ">
+           class="nav-link nav-link-active">
           2. Setup Syncing
         </a>
       
@@ -114,9 +114,9 @@
         <!-- Breadcrumb -->
          
 <div class="mb-8 text-sm text-zinc-500">
-  <span class="font-medium text-zinc-900">Intro</span>
+  <span class="font-medium text-zinc-900">Setup</span>
   <span class="mx-2">/</span>
-  Intro
+  Setup Syncing
 </div>
 
         <!-- <div class="mb-8 text-sm text-zinc-500">
@@ -126,7 +126,7 @@
         </div> -->
 
         <!-- Video Player Wrapper -->
-        <section id="playerWrap" class="aspect-video w-full overflow-hidden rounded-xl bg-black relative " style='display:none;'>
+        <section id="playerWrap" class="aspect-video w-full overflow-hidden rounded-xl bg-black relative " {{HIDE_INDEX}}>
 
           <!-- progress bar segements-->
           <div id="progressBar" class="absolute top-2 left-1/2 -translate-x-1/2 flex gap-1 z-20"></div>
@@ -137,6 +137,13 @@
           </div>
 
       
+<video id="player"
+  src="/src/videos/sync.mp4"
+  class="absolute inset-0 w-full h-full object-contain block"
+  preload="auto"
+  playsinline
+  muted></video>
+
 
           <!-- caption -->
           <div id="caption" class="absolute bottom-0 left-0 right-0 px-4 py-3 text-white text-md
@@ -179,12 +186,11 @@
 
         <!-- Article -->
         <article class="mt-10">
-        <h2 class="mt-12 text-2xl font-semibold tracking-tight">Welcome!</h2>
-<p class="leading-8 text-zinc-700 my-4">Welcome to my Anki tutorial.</p>
-<p class="leading-8 text-zinc-700 my-4">I used Anki heavily throughout medical school (mostly in preclinical, but definitely in clerkship year as well) and found it to be one of the most effective tools for long-term retention. It was my primary vehicle to get information to Step 1 and Step 2 over the course of learning it throughout the year. It widely used at <strong>NYU Grossman School of Medicine</strong>, and by students around the world.</p>
-<p class="leading-8 text-zinc-700 my-4">This tutorial is designed around short keyframe animations and explanations so you can quickly see the steps to use Anki, find the information you need, and get Anki set up without sitting through a long video. My goal was to build a tool you can quickly return to throughout the year, as you need it. For example, you might use the <strong>uWorld Quesiton Finder</strong> later in the year, or in your clerkship year all togther.</p>
-<p class="leading-8 text-zinc-700 my-4">I hope it's helpful. If you have questions, reach out any time!</p>
-<p class="leading-8 text-zinc-700 my-4">&gt; Martin Bouldo (martin.bouldo@nyulangone.org)</p>
+        <h2 class="mt-12 text-2xl font-semibold tracking-tight">Setting Up Sync</h2>
+<p class="leading-8 text-zinc-700 my-4">AnkiWeb Sync allows you to back up your collection online and keep your cards synchronized across multiple devices. It is strongly recommended, even if you only use Anki on a single computer. I use it to sync my current progress from my computer to my iPhone and vice-versa. Also, it helps to just keep a backup of all my reviews/decks in the cloud.</p>
+<p class="leading-8 text-zinc-700 my-4">To set up sync, click the Sync button in the top-right corner of Anki and sign in with your AnkiWeb account. If you do not have an account, you can create one for free on AnkiWeb. After setup, Anki will automatically sync your cards, scheduling information, media, and review history whenever you sync.</p>
+<p class="leading-8 text-zinc-700 my-4">Syncing after big changes (like importing a big deck) may take some time to upload to the server!</p>
+<p class="leading-8 text-zinc-700 my-4"><a href="https://ankiweb.net/account/signup" target="_blank" class="underline text-blue-500" rel="noopener noreferrer">https://ankiweb.net/account/signup</a></p>
           <!-- <p class="leading-8 text-zinc-700">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
             pellentesque efficitur lectus, nec pulvinar justo porttitor non.
@@ -235,7 +241,32 @@
 
   </div>
   <script>
-     const CONFIG_VIDEO_STOPS = [];
+     const CONFIG_VIDEO_STOPS = [
+  {
+    "t": 0,
+    "text": "1. Click the *Sync* button on the top action bar"
+  },
+  {
+    "t": 1.46,
+    "text": "2. Enter in your account details, if it is your first time using Anki, click *sign up*"
+  },
+  {
+    "t": 5.17,
+    "text": "3. Follow the online sign up flow, and validate your email with Anki"
+  },
+  {
+    "t": 6,
+    "text": "4. Return to Anki, and enter in your credentials (if the dialog disappeared, press sync again)"
+  },
+  {
+    "t": 16,
+    "text": "5. Press OK to verify your credentails. Anki will now try to sync!"
+  },
+  {
+    "t": 18,
+    "text": "6. To sync again in the future, (save your Anki or pull latest version) press *Sync* as needed"
+  }
+];
     //   const CONFIG_VIDEO_STOPS = [
     //     { t: 0, text: "1. Select the *gear icon* on the deck you want to rename" },
     //     { t: 1.250, text: `2. Select the *"Rename"* option` },

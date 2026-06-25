@@ -72,7 +72,15 @@ function buildSidebar(data, currentRoute) {
 function compileMarkdown(md = "") {
   let html = md;
 
+
+
   html = html.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+
+  // auto-link https URLs
+  html = html.replace(
+    /(https:\/\/[^\s<]+)/g,
+    '<a href="$1" target="_blank" class="underline text-blue-500" rel="noopener noreferrer">$1</a>'
+  );
 
   // headings
   html = html.replace(/^##\s(.+)$/gm, (_, t) => {
