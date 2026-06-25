@@ -1,0 +1,96 @@
+[
+  {  
+    "group": "Intro",
+    "pages": [
+      {
+      "id": "welcome",
+      "route": "",
+      "name": "Welcome",
+      "sidebarTitle": "Intro",
+      "breadcrumb": "Intro",
+      "bodyPath": "markdown/intro.md",
+      "videoPath": "",
+      "stops": []
+    }
+    ]
+  },
+  {  
+    "group": "Setup",
+    "pages": [
+      {
+      "id": "install-anki",
+      "name": "Install Anki",
+      "route": "install-anki",
+      "sidebarTitle": "Install Anki",
+      "breadcrumb": "Install Anki",
+      "bodyPath": "markdown/rename.md",
+      "videoPath": "/src/videos/rename-c.mp4",
+      "stops": [
+        { "t": 0, "text": "1. Select the *gear icon* on the deck you want to rename" },
+        { "t": 1.25, "text": "2. Select the *\"Rename\"* option" },
+        { "t": 3, "text": "3. Enter in your new deck name" },
+        { "t": 6, "text": "4. Click Ok" }
+      ]
+    },
+          {
+      "id": "retrain-fsrs",
+      "name": "Retrain FSRS",
+      "route": "retrain-fsrs",
+      "sidebarTitle": "Retrain FSRS",
+      "breadcrumb": "Retrain FSRS",
+      "bodyPath": "markdown/retrain-fsrs.md",
+      "videoPath": "/src/videos/retrain-fsrs-med.mp4",
+      "stops": [
+        { "t": 0, "text": "1. Select the *gear icon* on any deck" },
+        { "t": 1.30, "text": "2. Select the *\"Options\"* tab " },
+        { "t": 2.50, "text": "3. Scroll down to the FSRS section" },
+        { "t": 4.20, "text": "4. Select Optimize Current Presets" },
+        { "t": 5.5 , "text": "5. If you have existing reviews, your FSRS will retrain on your data. Hit Ok." },
+        { "t": 7, "text": "6. Save your new training data to apply changes" }
+      ]
+    }
+    ]
+  },
+  {  
+    "group": "Basics",
+    "pages": [
+      {
+      "id": "rename-deck",
+      "name": "Rename a Deck",
+      "route": "rename-deck",
+      "sidebarTitle": "Rename a Deck",
+      "breadcrumb": "Rename a Deck",
+      "bodyPath": "markdown/rename.md",
+      "videoPath": "/src/videos/rename-c.mp4",
+      "stops": [
+        { "t": 0, "text": "1. Select the *gear icon* on the deck you want to rename" },
+        { "t": 1.25, "text": "2. Select the *\"Rename\"* option" },
+        { "t": 3, "text": "3. Enter in your new deck name" },
+        { "t": 6, "text": "4. Click Ok" }
+      ]
+    },
+      {
+      "id": "image-occlusion",
+      "name": "Create an Image Occlusion Card",
+      "route": "image-occlusion",
+      "sidebarTitle": "Create an Image Occlusion Card",
+      "breadcrumb": "Image Occlusion Card",
+      "bodyPath": "markdown/image-occlusion.md",
+      "videoPath": "/src/videos/image-occlusion.mp4",
+      "stops": [
+        { "t": 0, "text": "1. Select *'Add'* in the top bar" },
+        { "t": 1.250, "text": "2. Change your note type to *'Image Occlusion'* by selecting the type box" },
+        { "t": 3.450, "text": "3. Select Choose" },
+        { "t": 4.50, "text": "4. Copy a diagram/picture to your clipboard" },
+        { "t": 9.25, "text": "5. Return to Anki and click *'Paste Image from Clipboard'* " },
+        { "t": 9.25, "text": "5. Return to Anki and click *'Paste Image from Clipboard'* " },
+        { "t": 11.4, "text": "6. Make sure the *rectangle tool* is selected on the sidebar " },
+        { "t": 13.4, "text": "8. Click and drag to draw rectangles over the information you are testing " },
+        { "t": 21.8, "text": "9. Click and drag existing rectangles to resize/reposition them " },
+        { "t": 30.9, "text": "10. Click *Add* and return to the main screen" },
+        { "t": 34.9, "text": "11. Study your cards" } 
+      ]
+    }
+    ]
+  }
+]

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="/src/build/output.css" rel="stylesheet">
+  <title>Anki Tutorial</title>
+</head>
+<body class="bg-zinc-50 text-zinc-900">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 border-b border-zinc-200 bg-white/90 backdrop-blur">
+    <div class="mx-auto max-w-7xl px-8 py-5">
+      <h1 class="text-2xl font-semibold tracking-tight">
+        Anki Tutorial
+      </h1>
+    </div>
+  </header>
+
+  <div class="mx-auto flex max-w-7xl">
+
+    <!-- Sidebar -->
+    
+<aside class="sticky top-18.25 h-[calc(100vh-73px)] w-96 shrink-0 overflow-y-auto border-r border-zinc-200 bg-white">
+  <div class="p-6">
+
+    <div class="mb-8">
+      <h3 class="sidebar-heading">Intro</h3>
+
+      <nav class="space-y-1">
+
+        <a href="/src/build/"
+           class="nav-link ">
+          1. Intro
+        </a>
+      
+      </nav>
+    </div>
+
+    <div class="mb-8">
+      <h3 class="sidebar-heading">Setup</h3>
+
+      <nav class="space-y-1">
+
+        <a href="/src/build/install-anki/"
+           class="nav-link ">
+          1. Install Anki
+        </a>
+      
+        <a href="/src/build/retrain-fsrs/"
+           class="nav-link nav-link-active">
+          2. Retrain FSRS
+        </a>
+      
+      </nav>
+    </div>
+
+    <div class="mb-8">
+      <h3 class="sidebar-heading">Basics</h3>
+
+      <nav class="space-y-1">
+
+        <a href="/src/build/rename-deck/"
+           class="nav-link ">
+          1. Rename a Deck
+        </a>
+      
+        <a href="/src/build/image-occlusion/"
+           class="nav-link ">
+          2. Create an Image Occlusion Card
+        </a>
+      
+      </nav>
+    </div>
+
+  </div>
+</aside>
+
+    <!-- <aside class="sticky top-18.25 h-[calc(100vh-73px)] w-96 shrink-0 overflow-y-auto border-r border-zinc-200 bg-white">
+      <div class="p-6">
+
+        <div class="mb-8">
+          <h3 class="sidebar-heading">
+            Setup
+          </h3>
+
+          <nav class="space-y-1">
+            <a href="#" class="nav-link nav-link-active">
+              1. Install Anki
+            </a>
+
+            <a href="#" class="nav-link">
+              2. Turn on Sync
+            </a>
+
+            <a href="#" class="nav-link">
+              3. Enable FSRS
+            </a>
+          </nav>
+        </div>
+      </div>
+    </aside> -->
+
+    <!-- Content -->
+    <main class="flex-1 px-12 py-10">
+
+      <div class="mx-auto max-w-4xl">
+
+        <!-- Breadcrumb -->
+         
+<div class="mb-8 text-sm text-zinc-500">
+  <span class="font-medium text-zinc-900">Setup</span>
+  <span class="mx-2">/</span>
+  Retrain FSRS
+</div>
+
+        <!-- <div class="mb-8 text-sm text-zinc-500">
+          <span class="font-medium text-zinc-900">Setup</span>
+          <span class="mx-2">/</span>
+          Install Anki
+        </div> -->
+
+        <!-- Video Player Wrapper -->
+        <section id="playerWrap" class="aspect-video w-full overflow-hidden rounded-xl bg-black relative " {{HIDE_INDEX}}>
+
+          <!-- progress bar segements-->
+          <div id="progressBar" class="absolute top-2 left-1/2 -translate-x-1/2 flex gap-1 z-20"></div>
+
+          <!-- step counter box (n/length) -->
+          <div id="currentStepBox"
+            class="absolute top-3 left-3 z-10 rounded-lg bg-black/60 text-white text-xs font-medium px-2.5 py-1.5 tabular-nums">
+          </div>
+
+      
+<video id="player"
+  src="/src/videos/retrain-fsrs-med.mp4"
+  class="absolute inset-0 w-full h-full object-contain block"
+  preload="auto"
+  playsinline
+  muted></video>
+
+
+          <!-- caption -->
+          <div id="caption" class="absolute bottom-0 left-0 right-0 px-4 py-3 text-white text-md
+                                    bg-gray-900 
+                                    opacity-0 translate-y-2 transition-all duration-300 ease-out">
+          </div>
+
+          <!-- prev -->
+          <button id="prevBtn" aria-label="Previous step"
+            class="absolute left-3 top-1/2 -translate-y-1/2 z-10 rounded-full bg-black/60 text-white ">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+              class="size-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+            </svg>
+          </button>
+
+          <!-- next -->
+          <button id="nextBtn" aria-label="Next step"
+            class="absolute right-3 top-1/2 -translate-y-1/2 z-10 rounded-full bg-black/60 text-white ">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+              class="size-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+            </svg>
+          </button>
+
+          <!-- fullscreen -->
+          <button id="expandToFullScreenBtn" aria-label="Toggle fullscreen"
+            class="absolute top-3 right-3 z-10 cursor-pointer
+                                    rounded-lg bg-black/60 text-white p-2 hover:bg-black/80
+                                    transition-all duration-200
+                                    focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-black">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+              class="size-6">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15" />
+            </svg>
+          </button>
+
+        </section>
+
+        <!-- Article -->
+        <article class="mt-10">
+        <h2 class="mt-12 text-2xl font-semibold tracking-tight">Retraining FSRS</h2>
+<p class="leading-8 text-zinc-700 my-4">FSRS uses your review history to predict when you are likely to forget a card. As you complete more reviews (training data), retraining updates the FSRS parameters to better match your personal memory patterns.</p>
+<p class="leading-8 text-zinc-700 my-4">To retrain FSRS, open <strong>Deck Options &gt; FSRS &gt; Optimize</strong>. Anki stores deck settings in <strong>presets</strong>, which are groups of shared options that can be assigned to one or more decks.</p>
+<p class="leading-8 text-zinc-700 my-4"><strong>Optimize Current Preset</strong> retrains only the preset currently selected in Deck Options (Ex: Default, or Anking). <strong>Optimize All Presets</strong> retrains every preset in your collection. If you only use the one preset, both options will produce identical results.</p>
+<p class="leading-8 text-zinc-700 my-4">Retraining about once per month is a reasonable, and forgetting is not the end of the world! FSRS remains effective even if you go several months without retraining, it might just not the most perfect version of itself for your unique review style!</p>
+<li class='list-disc pl-2 ml-5'>Uses your own review history as training data</li>
+<li class='list-disc pl-2 ml-5'>Recommended monthly retraining</li>
+<li class='list-disc pl-2 ml-5'>Forgetting to retrain is OK</li>
+<li class='list-disc pl-2 ml-5'>No cards or review data are lost</li>
+          <!-- <p class="leading-8 text-zinc-700">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+            pellentesque efficitur lectus, nec pulvinar justo porttitor non.
+            Aliquam scelerisque mi nec sagittis pretium.
+          </p>
+
+          <p class="mt-6 leading-8 text-zinc-700">
+            Cras aliquet justo et orci porta, ut ornare enim egestas. Mauris
+            cursus augue non imperdiet auctor, massa turpis efficitur neque,
+            ac semper tellus lorem nec libero.
+          </p>
+
+          <h2 class="mt-12 text-2xl font-semibold tracking-tight">
+            Why Install Anki?
+          </h2>
+
+          <p class="mt-4 leading-8 text-zinc-700">
+            Anki is the standard spaced repetition platform used by most medical
+            students. Setting it up correctly now avoids synchronization and
+            scheduling issues later.
+          </p>
+
+          <ul class="mt-6 space-y-3 text-zinc-700">
+            <li>• Free and open source</li>
+            <li>• Syncs across devices</li>
+            <li>• Supports FSRS scheduling</li>
+            <li>• Works with AnKing</li>
+          </ul> -->
+
+        </article>
+
+        <!-- Footer Nav -->
+        <!-- <div class="mt-16 flex items-center justify-between border-t border-zinc-200 pt-8">
+
+          <button class="btn btn-secondary">
+            Previous
+          </button>
+
+          <button class="btn btn-primary">
+            Next
+          </button>
+
+        </div> -->
+
+      </div>
+
+    </main>
+
+  </div>
+  <script>
+     const CONFIG_VIDEO_STOPS = [
+  {
+    "t": 0,
+    "text": "1. Select the *gear icon* on any deck"
+  },
+  {
+    "t": 1.3,
+    "text": "2. Select the *\"Options\"* tab "
+  },
+  {
+    "t": 2.5,
+    "text": "3. Scroll down to the FSRS section"
+  },
+  {
+    "t": 4.2,
+    "text": "4. Select Optimize Current Presets"
+  },
+  {
+    "t": 5.5,
+    "text": "5. If you have existing reviews, your FSRS will retrain on your data. Hit Ok."
+  },
+  {
+    "t": 7,
+    "text": "6. Save your new training data to apply changes"
+  }
+];
+    //   const CONFIG_VIDEO_STOPS = [
+    //     { t: 0, text: "1. Select the *gear icon* on the deck you want to rename" },
+    //     { t: 1.250, text: `2. Select the *"Rename"* option` },
+    //     { t: 3, text: "3. Enter in you new deck name" },
+    //     { t: 6, text: "4. Click Ok" },
+    //   ];
+  </script>
+  <script src="/src/build/core.js"></script>
+</body>
+</html>
