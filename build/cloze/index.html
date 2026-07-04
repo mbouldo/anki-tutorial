@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="/src/build/output.css" rel="stylesheet">
+  <link href="/build/output.css" rel="stylesheet">
   <title>Anki Tutorial</title>
 </head>
 <body class="bg-zinc-50 text-zinc-900">
@@ -29,7 +29,7 @@
 
       <nav class="space-y-1">
 
-        <a href="/src/build/"
+        <a href="/build/"
            class="nav-link ">
           1. Intro
         </a>
@@ -42,17 +42,17 @@
 
       <nav class="space-y-1">
 
-        <a href="/src/build/install-anki/"
+        <a href="/build/install-anki/"
            class="nav-link ">
           1. Install Anki
         </a>
       
-        <a href="/src/build/setup-sync/"
+        <a href="/build/setup-sync/"
            class="nav-link ">
           2. Eanble Syncing
         </a>
       
-        <a href="/src/build/configure-settings/"
+        <a href="/build/configure-settings/"
            class="nav-link ">
           3. Configure Settings
         </a>
@@ -65,24 +65,47 @@
 
       <nav class="space-y-1">
 
-        <a href="/src/build/retrain-fsrs/"
+        <a href="/build/retrain-fsrs/"
            class="nav-link ">
           1. Retrain FSRS
         </a>
       
-        <a href="/src/build/rename-deck/"
+        <a href="/build/import-brightspace-cards/"
            class="nav-link ">
-          2. Rename a Deck
+          2. Import Brightspace Cards
         </a>
       
-        <a href="/src/build/cloze/"
+        <a href="/build/rename-deck/"
+           class="nav-link ">
+          3. Rename a Deck
+        </a>
+      
+        <a href="/build/cloze/"
            class="nav-link nav-link-active">
-          3. Create an Cloze Deletion Card
+          4. Create an Cloze Deletion Card
         </a>
       
-        <a href="/src/build/image-occlusion/"
+        <a href="/build/image-occlusion/"
            class="nav-link ">
-          4. Create an Image Occlusion Card
+          5. Create an Image Occlusion Card
+        </a>
+      
+      </nav>
+    </div>
+
+    <div class="mb-8">
+      <h3 class="sidebar-heading">Question Banks</h3>
+
+      <nav class="space-y-1">
+
+        <a href="/build/amboss-cards/"
+           class="nav-link ">
+          1. Get Amboss Cards
+        </a>
+      
+        <a href="/build/manual-uworld/"
+           class="nav-link ">
+          2. Get uWorld Cards (No Addon)
         </a>
       
       </nav>
@@ -148,7 +171,7 @@
 
       
 <video id="player"
-  src="/src/videos/cloze.mp4"
+  src="/videos/cloze.mp4"
   class="absolute inset-0 w-full h-full object-contain block"
   preload="auto"
   playsinline
@@ -196,22 +219,7 @@
 
         <!-- Article -->
         <article class="mt-10 w-[800px]  h-screen" >
-        <h2 class="mt-12 text-2xl font-semibold tracking-tight">Creating Cloze Deletion Cards</h2>
-<p class="leading-8 text-zinc-700 my-4">Cloze deletion cards hide portions of text and ask you to recall the missing information. They are one of the most commonly used card types because they are fast to create and work well for facts, lists, and concepts, and scale better than a simple front + back card.</p>
-<p class="leading-8 text-zinc-700 my-4">To create a cloze card, select the text you want to hide and click the <strong>Cloze</strong> button, or manually wrap the text with cloze syntax.</p>
-<p class="leading-8 text-zinc-700 my-4">Examples:</p>
-<p class="leading-8 text-zinc-700 my-4"><code class="font-mono bg-zinc-200 px-1.5 py-0.5 rounded text-[0.95em]">The capital of France is {{c1::Paris}}</code></p>
-<p class="leading-8 text-zinc-700 my-4">= <em>The capital of France is _____</em></p>
-<p class="leading-8 text-zinc-700 my-4"><code class="font-mono bg-zinc-200 px-1.5 py-0.5 rounded text-[0.95em]">{{c1::Paris}} is the capital of {{c2::France}}</code></p>
-<p class="leading-8 text-zinc-700 my-4">= <em>_____ is the capital of France</em> && <em>Paris is the capital of _____</em> (two cards, with two different blanks)</p>
-<p class="leading-8 text-zinc-700 my-4"><code class="font-mono bg-zinc-200 px-1.5 py-0.5 rounded text-[0.95em]">The {{c1::heart}} pumps {{c1::blood}} throughout the body</code></p>
-<p class="leading-8 text-zinc-700 my-4">= <em>The _____ pumps _____ throughout the body</em> (two blanks at card)</p>
-<p class="leading-8 text-zinc-700 my-4">In the first example, one card is created. In the second example, two separate cards are created because <code class="font-mono bg-zinc-200 px-1.5 py-0.5 rounded text-[0.95em]">c1</code> and <code class="font-mono bg-zinc-200 px-1.5 py-0.5 rounded text-[0.95em]">c2</code> are different cloze numbers. In the third example, both deletions appear on the same card because they share the same cloze number (<code class="font-mono bg-zinc-200 px-1.5 py-0.5 rounded text-[0.95em]">c1</code>).</p>
-<li class='list-disc pl-2 ml-5'>Most commonly used Anki note type</li>
-<li class='list-disc pl-2 ml-5'><code class="font-mono bg-zinc-200 px-1.5 py-0.5 rounded text-[0.95em]">c1</code>, <code class="font-mono bg-zinc-200 px-1.5 py-0.5 rounded text-[0.95em]">c2</code>, <code class="font-mono bg-zinc-200 px-1.5 py-0.5 rounded text-[0.95em]">c3</code>, etc. create separate cards</li>
-<li class='list-disc pl-2 ml-5'>Multiple <code class="font-mono bg-zinc-200 px-1.5 py-0.5 rounded text-[0.95em]">c1</code> deletions are hidden together on the same card</li>
-<li class='list-disc pl-2 ml-5'>Best for facts, lists, and definitions</li>
-
+        <h2 class="mt-12 text-2xl font-semibold tracking-tight">Creating Cloze Deletion Cards</h2><br><br>Cloze deletion cards hide portions of text and ask you to recall the missing information. They are one of the most commonly used card types because they are fast to create and work well for facts, lists, and concepts, and scale better than a simple front + back card.<br><br>To create a cloze card, select the text you want to hide and click the <strong>Cloze</strong> button, or manually wrap the text with cloze syntax.<br><br>Examples:<br><br><code class="font-mono bg-zinc-200 px-1.5 py-0.5 rounded text-[0.95em]">The capital of France is {{c1::Paris}}</code> <br><br>= <em>The capital of France is _____</em> <br><br><code class="font-mono bg-zinc-200 px-1.5 py-0.5 rounded text-[0.95em]">{{c1::Paris}} is the capital of {{c2::France}}</code> <br><br>= <em>_____ is the capital of France</em> && <em>Paris is the capital of _____</em> (two cards, with two different blanks)<br><br><code class="font-mono bg-zinc-200 px-1.5 py-0.5 rounded text-[0.95em]">The {{c1::heart}} pumps {{c1::blood}} throughout the body</code> <br><br>= <em>The _____ pumps _____ throughout the body</em> (two blanks at card)<br><br>In the first example, one card is created. In the second example, two separate cards are created because <code class="font-mono bg-zinc-200 px-1.5 py-0.5 rounded text-[0.95em]">c1</code> and <code class="font-mono bg-zinc-200 px-1.5 py-0.5 rounded text-[0.95em]">c2</code> are different cloze numbers. In the third example, both deletions appear on the same card because they share the same cloze number (<code class="font-mono bg-zinc-200 px-1.5 py-0.5 rounded text-[0.95em]">c1</code>).<br><br><li class='list-disc pl-2 ml-5'>Most commonly used Anki note type</li><br><li class='list-disc pl-2 ml-5'><code class="font-mono bg-zinc-200 px-1.5 py-0.5 rounded text-[0.95em]">c1</code>, <code class="font-mono bg-zinc-200 px-1.5 py-0.5 rounded text-[0.95em]">c2</code>, <code class="font-mono bg-zinc-200 px-1.5 py-0.5 rounded text-[0.95em]">c3</code>, etc. create separate cards</li><br><li class='list-disc pl-2 ml-5'>Multiple <code class="font-mono bg-zinc-200 px-1.5 py-0.5 rounded text-[0.95em]">c1</code> deletions are hidden together on the same card</li><br><li class='list-disc pl-2 ml-5'>Best for facts, lists, and definitions</li>
           <!-- <p class="leading-8 text-zinc-700">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
             pellentesque efficitur lectus, nec pulvinar justo porttitor non.
@@ -319,6 +327,6 @@
     //     { t: 6, text: "4. Click Ok" },
     //   ];
   </script>
-  <script src="/src/build/core.js"></script>
+  <script src="/build/core.js"></script>
 </body>
 </html>

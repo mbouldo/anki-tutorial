@@ -105,9 +105,18 @@
 
     // caption controller + formatter
 
-    function formatCaption(text) {
-      return text.replace(/\*(.*?)\*/g, "<strong>$1</strong>");
-    }
+function formatCaption(text) {
+  // 1. convert escaped asterisk into placeholder
+  text = text.replace(/\\\*/g, "__ESC_STAR__");
+
+  // 2. bold
+  text = text.replace(/\*(.+?)\*/g, "<strong>$1</strong>");
+
+  // 3. restore literal *
+  text = text.replace(/__ESC_STAR__/g, "*");
+
+  return text;
+}
 
     function showCaption(text) {
       if (text) {

@@ -1,4 +1,4 @@
-##Initial Anki Settings
+## Initial Anki Settings
 
 Set up your baseline options once so Anki does not interfere with review flow and FSRS can function properly.
 

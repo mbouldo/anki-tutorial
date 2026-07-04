@@ -294,15 +294,12 @@
   .flex {
     display: flex;
   }
-<<<<<<< HEAD
-=======
   .hidden {
     display: none;
   }
   .inline {
     display: inline;
   }
->>>>>>> origin/master
   .aspect-video {
     aspect-ratio: var(--aspect-video);
   }
@@ -319,24 +316,18 @@
   .h-full {
     height: 100%;
   }
-<<<<<<< HEAD
-=======
   .h-screen {
     height: 100vh;
   }
->>>>>>> origin/master
   .w-96 {
     width: calc(var(--spacing) * 96);
   }
   .w-\[30px\] {
     width: 30px;
   }
-<<<<<<< HEAD
-=======
   .w-\[800px\] {
     width: 800px;
   }
->>>>>>> origin/master
   .w-full {
     width: 100%;
   }
@@ -412,15 +403,12 @@
   .overflow-y-auto {
     overflow-y: auto;
   }
-<<<<<<< HEAD
-=======
   .overflow-y-scroll {
     overflow-y: scroll;
   }
   .rounded {
     border-radius: 0.25rem;
   }
->>>>>>> origin/master
   .rounded-full {
     border-radius: calc(infinity * 1px);
   }
@@ -484,12 +472,9 @@
   .bg-zinc-50 {
     background-color: var(--color-zinc-50);
   }
-<<<<<<< HEAD
-=======
   .bg-zinc-200 {
     background-color: var(--color-zinc-200);
   }
->>>>>>> origin/master
   .bg-zinc-300\/70 {
     background-color: color-mix(in srgb, oklch(87.1% 0.006 286.286) 70%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
@@ -505,12 +490,9 @@
   .p-6 {
     padding: calc(var(--spacing) * 6);
   }
-<<<<<<< HEAD
-=======
   .px-1\.5 {
     padding-inline: calc(var(--spacing) * 1.5);
   }
->>>>>>> origin/master
   .px-2\.5 {
     padding-inline: calc(var(--spacing) * 2.5);
   }
@@ -526,12 +508,9 @@
   .px-12 {
     padding-inline: calc(var(--spacing) * 12);
   }
-<<<<<<< HEAD
-=======
   .py-0\.5 {
     padding-block: calc(var(--spacing) * 0.5);
   }
->>>>>>> origin/master
   .py-1\.5 {
     padding-block: calc(var(--spacing) * 1.5);
   }
@@ -550,12 +529,9 @@
   .pl-2 {
     padding-left: calc(var(--spacing) * 2);
   }
-<<<<<<< HEAD
-=======
   .font-mono {
     font-family: var(--font-mono);
   }
->>>>>>> origin/master
   .text-2xl {
     font-size: var(--text-2xl);
     line-height: var(--tw-leading, var(--text-2xl--line-height));
@@ -568,12 +544,9 @@
     font-size: var(--text-xs);
     line-height: var(--tw-leading, var(--text-xs--line-height));
   }
-<<<<<<< HEAD
-=======
   .text-\[0\.95em\] {
     font-size: 0.95em;
   }
->>>>>>> origin/master
   .leading-8 {
     --tw-leading: calc(var(--spacing) * 8);
     line-height: calc(var(--spacing) * 8);

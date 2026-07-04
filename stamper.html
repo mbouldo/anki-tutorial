@@ -59,7 +59,9 @@ button {
 <button id="markBtn">Mark Timestamp</button>
 
 <hr>
+<button id="extractBtn">Extract</button>
 
+<pre id="output"></pre>
 <div id="timestamps"></div>
 
 <script>
@@ -93,21 +95,64 @@ function updateClock() {
 requestAnimationFrame(updateClock);
 
 markBtn.addEventListener("click", () => {
-    const div = document.createElement("div");
-    div.className = "timestamp";
+    const row = document.createElement("div");
+    row.className = "timestamp";
 
-    const span = document.createElement("span");
-    span.textContent = formatTime(video.currentTime);
+    const time = document.createElement("span");
+    time.className = "time";
+    time.textContent = formatTime(video.currentTime);
+
+    const textarea = document.createElement("textarea");
+    textarea.rows = 2;
+    textarea.cols = 40;
+    textarea.placeholder = "Timestamp text...";
 
     const del = document.createElement("button");
     del.textContent = "Delete";
+    del.onclick = () => row.remove();
 
-    del.onclick = () => div.remove();
+    row.appendChild(time);
+    row.appendChild(textarea);
+    row.appendChild(del);
 
-    div.appendChild(span);
-    div.appendChild(del);
+    timestamps.appendChild(row);
+});
+const extractBtn = document.getElementById("extractBtn");
+const output = document.getElementById("output");
 
-    timestamps.appendChild(div);
+extractBtn.addEventListener("click", () => {
+    const id = prompt("ID:", "enable-sync") || "";
+    const name = prompt("Name:", "Enable Syncing") || "";
+    const route = prompt("Route:", "setup-sync") || "";
+    const body = prompt("Markdown file:", "sync.md") || "";
+    const video = prompt("Video filename:", "sync.mp4") || "";
+
+    const obj = {
+        id,
+        name,
+        route,
+        sidebarTitle: name,
+        breadcrumb: name,
+        bodyPath: `markdown/${body}`,
+        videoPath: `/videos/${video}`,
+        stops: []
+    };
+
+    document.querySelectorAll(".timestamp").forEach(row => {
+        const t = row.querySelector(".time").textContent;
+        const text = row.querySelector("textarea").value.trim();
+
+        const [m, rest] = t.split(":");
+        const seconds = Number(m) * 60 + Number(rest);
+
+        obj.stops.push({
+            t: Number(seconds.toFixed(2)),
+            text
+        });
+    });
+
+    output.textContent = JSON.stringify(obj, null, 2);
+    console.log(obj);
 });
 </script>
 

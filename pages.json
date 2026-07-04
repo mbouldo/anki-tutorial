@@ -24,7 +24,7 @@
       "sidebarTitle": "Install Anki",
       "breadcrumb": "Install Anki",
       "bodyPath": "markdown/install-anki.md",
-      "videoPath": "/src/videos/install-anki.mp4",
+      "videoPath": "/videos/install-anki.mp4",
       "stops": [
         { "t": 0, "text": "1. Navigate to https://apps.ankiweb.net/ and click *Download*" },
         { "t": 4.0, "text": "2. Select your correct OS version and click to begin the download" },
@@ -41,7 +41,7 @@
       "sidebarTitle": "Eanble Syncing",
       "breadcrumb": "Eanble Syncing",
       "bodyPath": "markdown/sync.md",
-      "videoPath": "/src/videos/sync.mp4",
+      "videoPath": "/videos/sync.mp4",
       "stops": [
         { "t": 0, "text": "1. Click the *Sync* button on the top action bar" },
         { "t": 1.46, "text": "2. Enter in your account details, if it is your first time using Anki, click *sign up*" },
@@ -58,7 +58,7 @@
       "sidebarTitle": "Configure Settings",
       "breadcrumb": "Configure Settings",
       "bodyPath": "markdown/settings.md",
-      "videoPath": "/src/videos/settings.mp4",
+      "videoPath": "/videos/settings.mp4",
       "stops": [
         { "t": 0, "text": "1. Select the *gear icon* on any deck" },
         { "t": 2, "text": "2. Select the *\"Options\"* tab " },
@@ -81,7 +81,7 @@
       "sidebarTitle": "Retrain FSRS",
       "breadcrumb": "Retrain FSRS",
       "bodyPath": "markdown/retrain-fsrs.md",
-      "videoPath": "/src/videos/retrain-fsrs-med.mp4",
+      "videoPath": "/videos/retrain-fsrs-med.mp4",
       "stops": [
         { "t": 0, "text": "1. Select the *gear icon* on any deck" },
         { "t": 1.30, "text": "2. Select the *\"Options\"* tab " },
@@ -91,6 +91,57 @@
         { "t": 7, "text": "6. Save your new training data to apply changes" }
       ]
     },
+    {
+  "id": "import-brightspace-cards",
+  "name": "import-brightspace-cards",
+  "route": "import-brightspace-cards",
+  "sidebarTitle": "Import Brightspace Cards",
+  "breadcrumb": "import-brightspace-cards",
+  "bodyPath": "/markdown/import-brightspace-cards.md",
+  "videoPath": "/videos/import-brightspace-cards.mp4",
+  "stops": [
+    {
+      "t": 2.46,
+      "text": "Go to Brightspace and find the lecture"
+    },
+    {
+      "t": 8.15,
+      "text": "Find the \"Anki\" module and click download"
+    },
+    {
+      "t": 12.48,
+      "text": "Once it finishes downloading, click on the file"
+    },
+    {
+      "t": 15.66,
+      "text": "You can also click on the file in your downloads folder"
+    },
+    {
+      "t": 18.82,
+      "text": "Anki will open it, and hit \"import\""
+    },
+    {
+      "t": 21.28,
+      "text": "Next click \"show\" to select all the newly imported cards"
+    },
+    {
+      "t": 23.8,
+      "text": "Press CTRL or CMD + A to select all the cards"
+    },
+    {
+      "t": 27.11,
+      "text": "Right click, and select \"Change Deck\""
+    },
+    {
+      "t": 28.87,
+      "text": "Select your deck, or click \"Add\" to create a new one"
+    },
+    {
+      "t": 34.37,
+      "text": "Close the browser to see your cards"
+    }
+  ]
+},
       {
       "id": "rename-deck",
       "name": "Rename a Deck",
@@ -98,7 +149,7 @@
       "sidebarTitle": "Rename a Deck",
       "breadcrumb": "Rename a Deck",
       "bodyPath": "markdown/rename.md",
-      "videoPath": "/src/videos/rename-c.mp4",
+      "videoPath": "/videos/rename-c.mp4",
       "stops": [
         { "t": 0, "text": "1. Select the *gear icon* on the deck you want to rename" },
         { "t": 1.25, "text": "2. Select the *\"Rename\"* option" },
@@ -113,7 +164,7 @@
       "sidebarTitle": "Create an Cloze Deletion Card",
       "breadcrumb": "Create an Cloze Deletion Card",
       "bodyPath": "markdown/cloze.md",
-      "videoPath": "/src/videos/cloze.mp4",
+      "videoPath": "/videos/cloze.mp4",
       "stops": [
         { "t": 0, "text": "1. Select *'Add'* in the top bar" },
         { "t": 4, "text": "2. Change your note type to *'Cloze'* by selecting the type box (mine is currently set to Basic)" },
@@ -136,7 +187,7 @@
       "sidebarTitle": "Create an Image Occlusion Card",
       "breadcrumb": "Image Occlusion Card",
       "bodyPath": "markdown/image-occlusion.md",
-      "videoPath": "/src/videos/image-occlusion.mp4",
+      "videoPath": "/videos/image-occlusion.mp4",
       "stops": [
         { "t": 0, "text": "1. Select *'Add'* in the top bar" },
         { "t": 1.250, "text": "2. Change your note type to *'Image Occlusion'* by selecting the type box" },
@@ -151,6 +202,94 @@
         { "t": 34.9, "text": "11. Study your cards" } 
       ]
     }
+    ]
+  },
+  {
+    "group": "Question Banks",
+    "pages":[
+      {
+        "id": "amboss",
+        "name": "amboss",
+        "route": "amboss-cards",
+        "sidebarTitle": "Get Amboss Cards",
+        "breadcrumb": "amboss",
+        "bodyPath": "markdown/amboss.md",
+        "videoPath": "/videos/amboss.mp4",
+        "stops": [
+          {
+            "t": 5.8,
+            "text": "If you want Anking cards from an Amboss question, click \"Get Anki Cards\""
+          },
+          {
+            "t": 8.79,
+            "text": "Review the suggested cards, and uncheck if not needed - then click \"Copy Anki query\""
+          },
+          {
+            "t": 11.56,
+            "text": "Navigate back to Anki and hit Browse"
+          },
+          {
+            "t": 14.16,
+            "text": "Paste the copied query into the search bar, and press enter"
+          },
+          {
+            "t": 22.85,
+            "text": "Review the cards, and select the ones you want to unsuspend (I selected all with CTRL + A)"
+          },
+          {
+            "t": 24.01,
+            "text": "Right click, and select \"Toggle Suspend\""
+          },
+          {
+            "t": 27.27,
+            "text": "Close the browser, and now your cards are ready to study"
+          }
+        ]
+      },
+      {
+  "id": "manual-uworld",
+  "name": "Get uWorld Cards (No Addon)",
+  "route": "manual-uworld",
+  "sidebarTitle": "Get uWorld Cards (No Addon)",
+  "breadcrumb": "Get uWorld Cards (No Addon)",
+  "bodyPath": "markdown/manual-uworld.md",
+  "videoPath": "/videos/manual-uworld.mp4",
+  "stops": [
+    {
+      "t": 0.85,
+      "text": "After finding a question you want Anking cards for, find the \"Question id:\" box"
+    },
+    {
+      "t": 0.87,
+      "text": "Select and copy the question Id (ex: 3110)"
+    },
+    {
+      "t": 3.92,
+      "text": "Return back to Anki, and hit *Browse*"
+    },
+    {
+      "t": 6.71,
+      "text": "Inside the search bar, type in tag:\\*UWorld\\*: followed by the question id, ex: tag:\\*UWorld\\*:3110"
+    },
+    {
+      "t": 9.37,
+      "text": "Press enter and review the matched cards"
+    },
+    {
+      "t": 14.93,
+      "text": "Select the cards (CTRL + A to select All), and right click"
+    },
+    {
+      "t": 16.51,
+      "text": "Select \"Toggle Suspend\""
+    },
+    {
+      "t": 19.21,
+      "text": "Close the Browser to review the cards"
+    }
+  ]
+}
+
     ]
   }
 ]

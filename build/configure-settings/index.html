@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="/src/build/output.css" rel="stylesheet">
+  <link href="/build/output.css" rel="stylesheet">
   <title>Anki Tutorial</title>
 </head>
 <body class="bg-zinc-50 text-zinc-900">
@@ -29,7 +29,7 @@
 
       <nav class="space-y-1">
 
-        <a href="/src/build/"
+        <a href="/build/"
            class="nav-link ">
           1. Intro
         </a>
@@ -42,17 +42,17 @@
 
       <nav class="space-y-1">
 
-        <a href="/src/build/install-anki/"
+        <a href="/build/install-anki/"
            class="nav-link ">
           1. Install Anki
         </a>
       
-        <a href="/src/build/setup-sync/"
+        <a href="/build/setup-sync/"
            class="nav-link ">
           2. Eanble Syncing
         </a>
       
-        <a href="/src/build/configure-settings/"
+        <a href="/build/configure-settings/"
            class="nav-link nav-link-active">
           3. Configure Settings
         </a>
@@ -65,24 +65,47 @@
 
       <nav class="space-y-1">
 
-        <a href="/src/build/retrain-fsrs/"
+        <a href="/build/retrain-fsrs/"
            class="nav-link ">
           1. Retrain FSRS
         </a>
       
-        <a href="/src/build/rename-deck/"
+        <a href="/build/import-brightspace-cards/"
            class="nav-link ">
-          2. Rename a Deck
+          2. Import Brightspace Cards
         </a>
       
-        <a href="/src/build/cloze/"
+        <a href="/build/rename-deck/"
            class="nav-link ">
-          3. Create an Cloze Deletion Card
+          3. Rename a Deck
         </a>
       
-        <a href="/src/build/image-occlusion/"
+        <a href="/build/cloze/"
            class="nav-link ">
-          4. Create an Image Occlusion Card
+          4. Create an Cloze Deletion Card
+        </a>
+      
+        <a href="/build/image-occlusion/"
+           class="nav-link ">
+          5. Create an Image Occlusion Card
+        </a>
+      
+      </nav>
+    </div>
+
+    <div class="mb-8">
+      <h3 class="sidebar-heading">Question Banks</h3>
+
+      <nav class="space-y-1">
+
+        <a href="/build/amboss-cards/"
+           class="nav-link ">
+          1. Get Amboss Cards
+        </a>
+      
+        <a href="/build/manual-uworld/"
+           class="nav-link ">
+          2. Get uWorld Cards (No Addon)
         </a>
       
       </nav>
@@ -148,7 +171,7 @@
 
       
 <video id="player"
-  src="/src/videos/settings.mp4"
+  src="/videos/settings.mp4"
   class="absolute inset-0 w-full h-full object-contain block"
   preload="auto"
   playsinline
@@ -196,14 +219,7 @@
 
         <!-- Article -->
         <article class="mt-10 w-[800px]  h-screen" >
-        <p class="leading-8 text-zinc-700 my-4">##Initial Anki Settings</p>
-<p class="leading-8 text-zinc-700 my-4">Set up your baseline options once so Anki does not interfere with review flow and FSRS can function properly.</p>
-<p class="leading-8 text-zinc-700 my-4">Start by opening any deck’s <strong>Options (gear icon)</strong> and confirming which preset it uses. Most users should standardize on a single preset across all decks to avoid inconsistent scheduling behavior. However, if you were studying between two wildly different modalities (ex: Medical School Deck, and Languages Deck), you might want to have custom settings to match more learning for each. I have never found a use case for different profiles within medical school studying.</p>
-<p class="leading-8 text-zinc-700 my-4">Set New cards/day and Maximum reviews/day to very high values (e.g. 9999). This makes it so that Anki does NOT hide cards from you, and you get to decide how many cards you do. There were days I did 0 cards, and some days that I did a few hundred cards in a day based off my unique study schedule. By default, Anki caps this at 20 per day which makes no sense.</p>
-<p class="leading-8 text-zinc-700 my-4">Enable FSRS in the options panel. This switches scheduling to a "AI" model that adapts to your performance over time. At first, this model uses an emperical model which works very well. It will only get better with time.</p>
-<p class="leading-8 text-zinc-700 my-4">Key points:
-<li class='list-disc pl-2 ml-5'>Remove daily caps on new and review limits</li>
-<li class='list-disc pl-2 ml-5'>Enable FSRS</li></p>
+        <h2 class="mt-12 text-2xl font-semibold tracking-tight">Initial Anki Settings</h2><br><br>Set up your baseline options once so Anki does not interfere with review flow and FSRS can function properly.<br><br>Start by opening any deck’s <strong>Options (gear icon)</strong> and confirming which preset it uses. Most users should standardize on a single preset across all decks to avoid inconsistent scheduling behavior. However, if you were studying between two wildly different modalities (ex: Medical School Deck, and Languages Deck), you might want to have custom settings to match more learning for each. I have never found a use case for different profiles within medical school studying. <br><br>Set New cards/day and Maximum reviews/day to very high values (e.g. 9999). This makes it so that Anki does NOT hide cards from you, and you get to decide how many cards you do. There were days I did 0 cards, and some days that I did a few hundred cards in a day based off my unique study schedule. By default, Anki caps this at 20 per day which makes no sense.<br><br>Enable FSRS in the options panel. This switches scheduling to a "AI" model that adapts to your performance over time. At first, this model uses an emperical model which works very well. It will only get better with time.<br><br>Key points:<br><li class='list-disc pl-2 ml-5'>Remove daily caps on new and review limits</li><br><li class='list-disc pl-2 ml-5'>Enable FSRS</li>
           <!-- <p class="leading-8 text-zinc-700">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
             pellentesque efficitur lectus, nec pulvinar justo porttitor non.
@@ -291,6 +307,6 @@
     //     { t: 6, text: "4. Click Ok" },
     //   ];
   </script>
-  <script src="/src/build/core.js"></script>
+  <script src="/build/core.js"></script>
 </body>
 </html>

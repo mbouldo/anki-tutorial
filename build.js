@@ -129,7 +129,7 @@ html = html.replace(/(^|[^*])\*(?!\*)(.+?)\*/g, "$1<em>$2</em>");
     })
     .join("\n");
 
-  // html = html.replace(/\n/g, "<br>");
+  html = html.replace(/\n/g, "<br>");
 
   return html;
 }
