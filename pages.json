@@ -24,7 +24,7 @@
       "sidebarTitle": "Install Anki",
       "breadcrumb": "Install Anki",
       "bodyPath": "markdown/install-anki.md",
-      "videoPath": "/src/videos/install-anki.mp4",
+      "videoPath": "/videos/install-anki.mp4",
       "stops": [
         { "t": 0, "text": "1. Navigate to https://apps.ankiweb.net/ and click *Download*" },
         { "t": 4.0, "text": "2. Select your correct OS version and click to begin the download" },
@@ -41,7 +41,7 @@
       "sidebarTitle": "Setup Syncing",
       "breadcrumb": "Setup Syncing",
       "bodyPath": "markdown/sync.md",
-      "videoPath": "/src/videos/sync.mp4",
+      "videoPath": "/videos/sync.mp4",
       "stops": [
         { "t": 0, "text": "1. Click the *Sync* button on the top action bar" },
         { "t": 1.46, "text": "2. Enter in your account details, if it is your first time using Anki, click *sign up*" },
@@ -58,7 +58,7 @@
       "sidebarTitle": "Retrain FSRS",
       "breadcrumb": "Retrain FSRS",
       "bodyPath": "markdown/retrain-fsrs.md",
-      "videoPath": "/src/videos/retrain-fsrs-med.mp4",
+      "videoPath": "/videos/retrain-fsrs-med.mp4",
       "stops": [
         { "t": 0, "text": "1. Select the *gear icon* on any deck" },
         { "t": 1.30, "text": "2. Select the *\"Options\"* tab " },
@@ -80,7 +80,7 @@
       "sidebarTitle": "Rename a Deck",
       "breadcrumb": "Rename a Deck",
       "bodyPath": "markdown/rename.md",
-      "videoPath": "/src/videos/rename-c.mp4",
+      "videoPath": "/videos/rename-c.mp4",
       "stops": [
         { "t": 0, "text": "1. Select the *gear icon* on the deck you want to rename" },
         { "t": 1.25, "text": "2. Select the *\"Rename\"* option" },
@@ -95,7 +95,7 @@
       "sidebarTitle": "Create an Image Occlusion Card",
       "breadcrumb": "Image Occlusion Card",
       "bodyPath": "markdown/image-occlusion.md",
-      "videoPath": "/src/videos/image-occlusion.mp4",
+      "videoPath": "/videos/image-occlusion.mp4",
       "stops": [
         { "t": 0, "text": "1. Select *'Add'* in the top bar" },
         { "t": 1.250, "text": "2. Change your note type to *'Image Occlusion'* by selecting the type box" },

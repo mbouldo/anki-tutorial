@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="/src/build/output.css" rel="stylesheet">
+  <link href="/build/output.css" rel="stylesheet">
   <title>Anki Tutorial</title>
 </head>
 <body class="bg-zinc-50 text-zinc-900">
@@ -29,7 +29,7 @@
 
       <nav class="space-y-1">
 
-        <a href="/src/build/"
+        <a href="/build/"
            class="nav-link ">
           1. Intro
         </a>
@@ -42,17 +42,17 @@
 
       <nav class="space-y-1">
 
-        <a href="/src/build/install-anki/"
+        <a href="/build/install-anki/"
            class="nav-link ">
           1. Install Anki
         </a>
       
-        <a href="/src/build/setup-sync/"
+        <a href="/build/setup-sync/"
            class="nav-link ">
           2. Setup Syncing
         </a>
       
-        <a href="/src/build/retrain-fsrs/"
+        <a href="/build/retrain-fsrs/"
            class="nav-link nav-link-active">
           3. Retrain FSRS
         </a>
@@ -65,12 +65,12 @@
 
       <nav class="space-y-1">
 
-        <a href="/src/build/rename-deck/"
+        <a href="/build/rename-deck/"
            class="nav-link ">
           1. Rename a Deck
         </a>
       
-        <a href="/src/build/image-occlusion/"
+        <a href="/build/image-occlusion/"
            class="nav-link ">
           2. Create an Image Occlusion Card
         </a>
@@ -138,7 +138,7 @@
 
       
 <video id="player"
-  src="/src/videos/retrain-fsrs-med.mp4"
+  src="/videos/retrain-fsrs-med.mp4"
   class="absolute inset-0 w-full h-full object-contain block"
   preload="auto"
   playsinline
@@ -187,10 +187,15 @@
         <!-- Article -->
         <article class="mt-10">
         <h2 class="mt-12 text-2xl font-semibold tracking-tight">Retraining FSRS</h2>
-<p class="leading-8 text-zinc-700 my-4">FSRS uses your review history to predict when you are likely to forget a card. As you complete more reviews (training data), retraining updates the FSRS parameters to better match your personal memory patterns.</p>
-<p class="leading-8 text-zinc-700 my-4">To retrain FSRS, open <strong>Deck Options &gt; FSRS &gt; Optimize</strong>. Anki stores deck settings in <strong>presets</strong>, which are groups of shared options that can be assigned to one or more decks.</p>
-<p class="leading-8 text-zinc-700 my-4"><strong>Optimize Current Preset</strong> retrains only the preset currently selected in Deck Options (Ex: Default, or Anking). <strong>Optimize All Presets</strong> retrains every preset in your collection. If you only use the one preset, both options will produce identical results.</p>
-<p class="leading-8 text-zinc-700 my-4">Retraining about once per month is a reasonable, and forgetting is not the end of the world! FSRS remains effective even if you go several months without retraining, it might just not the most perfect version of itself for your unique review style!</p>
+
+FSRS uses your review history to predict when you are likely to forget a card. As you complete more reviews (training data), retraining updates the FSRS parameters to better match your personal memory patterns.
+
+To retrain FSRS, open <strong>Deck Options &gt; FSRS &gt; Optimize</strong>. Anki stores deck settings in <strong>presets</strong>, which are groups of shared options that can be assigned to one or more decks.
+
+<strong>Optimize Current Preset</strong> retrains only the preset currently selected in Deck Options (Ex: Default, or Anking). <strong>Optimize All Presets</strong> retrains every preset in your collection. If you only use the one preset, both options will produce identical results.
+
+Retraining about once per month is a reasonable, and forgetting is not the end of the world! FSRS remains effective even if you go several months without retraining, it might just not the most perfect version of itself for your unique review style!
+
 <li class='list-disc pl-2 ml-5'>Uses your own review history as training data</li>
 <li class='list-disc pl-2 ml-5'>Recommended monthly retraining</li>
 <li class='list-disc pl-2 ml-5'>Forgetting to retrain is OK</li>
@@ -278,6 +283,6 @@
     //     { t: 6, text: "4. Click Ok" },
     //   ];
   </script>
-  <script src="/src/build/core.js"></script>
+  <script src="/build/core.js"></script>
 </body>
 </html>

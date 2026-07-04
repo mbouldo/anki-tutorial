@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Video Timestamp Tool</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+video {
+    width: 100%;
+    background: black;
+    margin-top: 15px;
+}
+
+#currentTime {
+    font-size: 28px;
+    font-family: monospace;
+    margin: 15px 0;
+}
+
+button {
+    cursor: pointer;
+    padding: 8px 14px;
+}
+
+.timestamp {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 6px 0;
+    padding: 6px;
+    border: 1px solid #ccc;
+}
+
+.timestamp span {
+    font-family: monospace;
+    font-size: 18px;
+}
+</style>
+</head>
+
+<body>
+
+<h2>Video Timestamp Tool</h2>
+
+<input type="file" id="videoFile" accept="video/*">
+
+<video id="video" controls></video>
+
+<div id="currentTime">00:00.000</div>
+
+<button id="markBtn">Mark Timestamp</button>
+
+<hr>
+
+<div id="timestamps"></div>
+
+<script>
+const fileInput = document.getElementById("videoFile");
+const video = document.getElementById("video");
+const currentTime = document.getElementById("currentTime");
+const markBtn = document.getElementById("markBtn");
+const timestamps = document.getElementById("timestamps");
+
+fileInput.addEventListener("change", e => {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    video.src = URL.createObjectURL(file);
+    video.load();
+});
+
+function formatTime(seconds) {
+    const mins = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60);
+    const ms = Math.floor((seconds % 1) * 1000);
+
+    return `${String(mins).padStart(2,"0")}:${String(secs).padStart(2,"0")}.${String(ms).padStart(3,"0")}`;
+}
+
+function updateClock() {
+    currentTime.textContent = formatTime(video.currentTime);
+    requestAnimationFrame(updateClock);
+}
+
+requestAnimationFrame(updateClock);
+
+markBtn.addEventListener("click", () => {
+    const div = document.createElement("div");
+    div.className = "timestamp";
+
+    const span = document.createElement("span");
+    span.textContent = formatTime(video.currentTime);
+
+    const del = document.createElement("button");
+    del.textContent = "Delete";
+
+    del.onclick = () => div.remove();
+
+    div.appendChild(span);
+    div.appendChild(del);
+
+    timestamps.appendChild(div);
+});
+</script>
+
+</body>
+</html>
