@@ -1,12 +1,14 @@
+// ./tailwindcss -i src/input.css -o src/output.css
 const fs = require("fs");
 const path = require("path");
+
 
 const start = process.hrtime.bigint();
 
 const data = JSON.parse(fs.readFileSync("pages.json", "utf8"));
 const shell = fs.readFileSync("./index-shell.html", "utf8");
 
-const SERVER_DIR = `/build`;
+const SERVER_DIR = `/src/build`;
 const ROOTPATH = path.join(__dirname, "");
 
 function copyFile(src, dest) {

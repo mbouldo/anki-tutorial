@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="/build/output.css" rel="stylesheet">
+  <link href="/src/build/output.css" rel="stylesheet">
   <title>Anki Tutorial</title>
 </head>
 <body class="bg-zinc-50 text-zinc-900">
@@ -12,7 +12,7 @@
   <header class="sticky top-0 z-50 border-b border-zinc-200 bg-white/90 backdrop-blur">
     <div class="mx-auto max-w-7xl px-8 py-5">
       <h1 class="text-2xl font-semibold tracking-tight">
-        Anki Tutorial
+        <a href="https://mbouldo.com" class="text-xl font-normal text-gray-600">mbouldo.com /</a>  Anki Tutorial
       </h1>
     </div>
   </header>
@@ -29,7 +29,7 @@
 
       <nav class="space-y-1">
 
-        <a href="/build/"
+        <a href="/src/build/"
            class="nav-link nav-link-active">
           1. Intro
         </a>
@@ -42,17 +42,17 @@
 
       <nav class="space-y-1">
 
-        <a href="/build/install-anki/"
+        <a href="/src/build/install-anki/"
            class="nav-link ">
           1. Install Anki
         </a>
       
-        <a href="/build/setup-sync/"
+        <a href="/src/build/setup-sync/"
            class="nav-link ">
           2. Eanble Syncing
         </a>
       
-        <a href="/build/configure-settings/"
+        <a href="/src/build/configure-settings/"
            class="nav-link ">
           3. Configure Settings
         </a>
@@ -65,29 +65,67 @@
 
       <nav class="space-y-1">
 
-        <a href="/build/retrain-fsrs/"
+        <a href="/src/build/retrain-fsrs/"
            class="nav-link ">
           1. Retrain FSRS
         </a>
       
-        <a href="/build/import-brightspace-cards/"
+        <a href="/src/build/install-addon-heatmap/"
            class="nav-link ">
-          2. Import Brightspace Cards
+          2. Install Addon (Heatmap)
         </a>
       
-        <a href="/build/rename-deck/"
+        <a href="/src/build/rename-deck/"
            class="nav-link ">
           3. Rename a Deck
         </a>
       
-        <a href="/build/cloze/"
+        <a href="/src/build/cloze/"
            class="nav-link ">
           4. Create an Cloze Deletion Card
         </a>
       
-        <a href="/build/image-occlusion/"
+        <a href="/src/build/image-occlusion/"
            class="nav-link ">
           5. Create an Image Occlusion Card
+        </a>
+      
+        <a href="/src/build/import-brightspace-cards/"
+           class="nav-link ">
+          6. Import Brightspace Cards (NYUGSOM)
+        </a>
+      
+      </nav>
+    </div>
+
+    <div class="mb-8">
+      <h3 class="sidebar-heading">Anking</h3>
+
+      <nav class="space-y-1">
+
+        <a href="/src/build/install-anking/"
+           class="nav-link ">
+          1. Install Anking
+        </a>
+      
+        <a href="/src/build/unsuspend-by-tag-tree/"
+           class="nav-link ">
+          2. Find Anking cards by Tag Tree
+        </a>
+      
+        <a href="/src/build/unsuspend-by-tag/"
+           class="nav-link ">
+          3. Find Anking cards by Copied Tag
+        </a>
+      
+        <a href="/src/build/unsuspend-by-spreadsheet/"
+           class="nav-link ">
+          4. Find Anking cards by Spreadsheet
+        </a>
+      
+        <a href="/src/build/filter-by-high-yield/"
+           class="nav-link ">
+          5. Filter by High Yield
         </a>
       
       </nav>
@@ -98,14 +136,42 @@
 
       <nav class="space-y-1">
 
-        <a href="/build/amboss-cards/"
+        <a href="/src/build/amboss-cards/"
            class="nav-link ">
-          1. Get Amboss Cards
+          1. Get Cards from Amboss Questions
         </a>
       
-        <a href="/build/manual-uworld/"
+        <a href="/src/build/manual-uworld/"
            class="nav-link ">
-          2. Get uWorld Cards (No Addon)
+          2. Get Cards from uWorld Question (Manual)
+        </a>
+      
+        <a href="/src/build/find-uworld-cards-by-addon/"
+           class="nav-link ">
+          3. Get Cards from uWorld Question (Addon)
+        </a>
+      
+        <a href="/src/build/find-uworld-cards-by-question-list/"
+           class="nav-link ">
+          4. Get Cards by uWorld Question List
+        </a>
+      
+      </nav>
+    </div>
+
+    <div class="mb-8">
+      <h3 class="sidebar-heading">Clerkship</h3>
+
+      <nav class="space-y-1">
+
+        <a href="/src/build/suspend-step-1-only-cards/"
+           class="nav-link ">
+          1. Suspend Step 1 Only Cards
+        </a>
+      
+        <a href="/src/build/find-cards-by-shelf/"
+           class="nav-link ">
+          2. Find Anking Cards by Shelf Exam
         </a>
       
       </nav>
@@ -212,7 +278,7 @@
 
         <!-- Article -->
         <article class="mt-10 w-[800px]  h-screen" >
-        <h2 class="mt-12 text-2xl font-semibold tracking-tight">Welcome!</h2><br><br>Welcome to my Anki tutorial.<br><br>I used Anki heavily throughout medical school (mostly in preclinical, but definitely in clerkship year as well) and found it to be one of the most effective tools for long-term retention. It was my primary vehicle to get information to Step 1 and Step 2 over the course of learning it throughout the year. It widely used at <strong>NYU Grossman School of Medicine</strong>, and by students around the world.<br><br>This tutorial is designed around short keyframe animations and explanations so you can quickly see the steps to use Anki, find the information you need, and get Anki set up without sitting through a long video. My goal was to build a tool you can quickly return to throughout the year, as you need it. For example, you might use the <strong>uWorld Quesiton Finder</strong> later in the year, or in your clerkship year all togther.<br><br>I hope it's helpful. If you have questions, reach out any time!<br><br>&gt; Martin Bouldo (martin.bouldo@nyulangone.org)
+        <h2 class="mt-12 text-2xl font-semibold tracking-tight">Welcome!</h2><br><p class="leading-8 text-zinc-700 my-4">Welcome to the Anki tutorial!</p><br><p class="leading-8 text-zinc-700 my-4">I used Anki heavily throughout medical school (mostly in preclinical, but definitely in clerkship year as well) and found it to be one of the most effective tools for long-term retention. It was my primary vehicle to get information to Step 1 and Step 2 over the course of learning it throughout the year. It widely used at <strong>NYU Grossman School of Medicine</strong>, and by students around the world.</p><br><p class="leading-8 text-zinc-700 my-4">This tutorial is designed around short keyframe animations and explanations so you can quickly see the steps to use Anki, find the information you need, and get Anki set up without sitting through a long video. My goal was to build a tool you can quickly return to throughout the year, as you need it. For example, you might use the <strong>uWorld Quesiton Finder</strong> later in the year, or in your clerkship year all togther.</p><br><p class="leading-8 text-zinc-700 my-4">I hope it's helpful. If you have questions, reach out any time!</p><br><p class="leading-8 text-zinc-700 my-4">&gt; Martin Bouldo (martin.bouldo@nyulangone.org)</p>
           <!-- <p class="leading-8 text-zinc-700">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
             pellentesque efficitur lectus, nec pulvinar justo porttitor non.
@@ -271,6 +337,6 @@
     //     { t: 6, text: "4. Click Ok" },
     //   ];
   </script>
-  <script src="/build/core.js"></script>
+  <script src="/src/build/core.js"></script>
 </body>
 </html>

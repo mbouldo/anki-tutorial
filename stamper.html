@@ -122,7 +122,7 @@ const output = document.getElementById("output");
 
 extractBtn.addEventListener("click", () => {
     const id = prompt("ID:", "enable-sync") || "";
-    const name = prompt("Name:", "Enable Syncing") || "";
+    const name = prompt("Sidebar Title:", "Enable Syncing") || "";
     const route = prompt("Route:", "setup-sync") || "";
     const body = prompt("Markdown file:", "sync.md") || "";
     const video = prompt("Video filename:", "sync.mp4") || "";
@@ -134,7 +134,7 @@ extractBtn.addEventListener("click", () => {
         sidebarTitle: name,
         breadcrumb: name,
         bodyPath: `markdown/${body}`,
-        videoPath: `/videos/${video}`,
+        videoPath: `/src/videos/${video}`,
         stops: []
     };
 
