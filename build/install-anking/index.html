@@ -8,20 +8,29 @@
 </head>
 <body class="bg-zinc-50 text-zinc-900">
 
-  <!-- Header -->
-  <header class="sticky top-0 z-50 border-b border-zinc-200 bg-white/90 backdrop-blur">
-    <div class="mx-auto max-w-7xl px-8 py-5">
-      <h1 class="text-2xl font-semibold tracking-tight">
-        <a href="https://mbouldo.com" class="text-xl font-normal text-gray-600">mbouldo.com /</a>  Anki Tutorial
-      </h1>
-    </div>
-  </header>
+<header class="sticky top-0 z-50 border-b border-zinc-200 bg-white/90 backdrop-blur">
+  <div class="relative mx-auto max-w-7xl px-8 py-5">
+    <h1 class="text-2xl font-semibold tracking-tight">
+      <a href="https://mbouldo.com" class="text-xl font-normal text-gray-600">mbouldo.com /</a> Anki Tutorial
+    </h1>
+
+    <button id="sidebarToggle"
+      class="md:hidden absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded bg-zinc-100 text-blue-500 text-2xl leading-none">
+      ☰
+    </button>
+  </div>
+</header>
+
 
   <div class="mx-auto flex max-w-7xl">
-
     <!-- Sidebar -->
     
-<aside class="sticky top-18.25 h-[calc(100vh-73px)] w-96 shrink-0 overflow-y-auto border-r border-zinc-200 bg-white">
+<aside id="sidebar"
+  class="fixed md:static inset-y-0 left-0 z-50 w-80 md:w-96
+         bg-white border-r border-zinc-200
+         transform -translate-x-full md:translate-x-0
+         transition-transform duration-200 overflow-y-auto
+         md:shrink-0">
   <div class="p-6">
 
     <div class="mb-8">
@@ -180,30 +189,6 @@
   </div>
 </aside>
 
-    <!-- <aside class="sticky top-18.25 h-[calc(100vh-73px)] w-96 shrink-0 overflow-y-auto border-r border-zinc-200 bg-white">
-      <div class="p-6">
-
-        <div class="mb-8">
-          <h3 class="sidebar-heading">
-            Setup
-          </h3>
-
-          <nav class="space-y-1">
-            <a href="#" class="nav-link nav-link-active">
-              1. Install Anki
-            </a>
-
-            <a href="#" class="nav-link">
-              2. Turn on Sync
-            </a>
-
-            <a href="#" class="nav-link">
-              3. Enable FSRS
-            </a>
-          </nav>
-        </div>
-      </div>
-    </aside> -->
 
     <!-- Content -->
     <main class="flex-1 px-12 py-10">
@@ -285,7 +270,12 @@
 
         <!-- Article -->
         <article class="mt-10 w-[800px]  h-screen" >
-        
+        <h2 class="mt-12 text-2xl font-semibold tracking-tight">Installing AnKing Deck</h2>
+<p class="leading-8 text-zinc-700 my-4">The AnKing deck is an extremely large, pre-made Anki deck designed for US medical school, primarily based on Step 1 and Step 2 content. It integrates tagged material from multiple resources into a single searchable system, allowing targeted study by topic rather than linear progression. It saves you a <strong>TON</strong> of time not having to create the cards, and it is directly relavent to your USMLE Step 1/2 exams.</p>
+<p class="leading-8 text-zinc-700 my-4">After downloading the <code class="font-mono bg-zinc-200 px-1.5 py-0.5 rounded text-[0.95em]">.apkg</code> file, click it to open in Anki and enter import mode.</p>
+<p class="leading-8 text-zinc-700 my-4">Importing may take several minutes due to the size of the deck. Once finished, close the import dialog and move to the Browser.</p>
+<p class="leading-8 text-zinc-700 my-4">After import, select all AnKing cards and <strong>suspend them immediately</strong>. When importing Anking automatically puts ALL the cards as "new" cards, ready to study, however, with 42,000 cards that is impractical, and you should suspend them first before selectively unsuspending cards as you need them. The deck is meant to be used selectively through tagging and unsuspending specific topics, rather than studying the entire thing.</p>
+<p class="leading-8 text-zinc-700 my-4">Usually students will cover a third party resource first (ex: a Boards & Beyond video), then find the corresponding videos' cards within Anking.</p>
           <!-- <p class="leading-8 text-zinc-700">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
             pellentesque efficitur lectus, nec pulvinar justo porttitor non.

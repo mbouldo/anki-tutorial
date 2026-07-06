@@ -21,7 +21,12 @@ function copyFile(src, dest) {
 ----------------------------*/
 function buildSidebar(data, currentRoute) {
   let html = `
-<aside class="sticky top-18.25 h-[calc(100vh-73px)] w-96 shrink-0 overflow-y-auto border-r border-zinc-200 bg-white">
+<aside id="sidebar"
+  class="fixed md:static inset-y-0 left-0 z-50 w-80 md:w-96
+         bg-white border-r border-zinc-200
+         transform -translate-x-full md:translate-x-0
+         transition-transform duration-200 overflow-y-auto
+         md:shrink-0">
   <div class="p-6">
 `;
 
@@ -114,24 +119,25 @@ html = html.replace(/(^|[^*])\*(?!\*)(.+?)\*/g, "$1<em>$2</em>");
     return `<ul class="mt-6 space-y-3 text-zinc-700">${m}</ul>`;
   });
 
-  // paragraphs
-  html = html
-    .split(/\n{2,}/)
-    .map((block) => {
-      const t = block.trim();
-      if (!t) return "";
 
-      if (
-        t.startsWith("<h2") ||
-        t.startsWith("<ul") ||
-        t.startsWith("<li")
-      ) return t;
+// paragraphs
+html = html
+  .split(/\n{2,}/)
+  .map((block) => {
+    const t = block.trim();
+    if (!t) return "";
 
-      return `<p class="leading-8 text-zinc-700 my-4">${t}</p>`;
-    })
-    .join("\n");
+    if (
+      t.startsWith("<h2") ||
+      t.startsWith("<ul") ||
+      t.startsWith("<li")
+    ) {
+      return t;
+    }
 
-  html = html.replace(/\n/g, "<br>");
+    return `<p class="leading-8 text-zinc-700 my-4">${t.replace(/\n/g, "<br>")}</p>`;
+  })
+  .join("\n");
 
   return html;
 }

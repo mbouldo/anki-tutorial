@@ -8,20 +8,29 @@
 </head>
 <body class="bg-zinc-50 text-zinc-900">
 
-  <!-- Header -->
-  <header class="sticky top-0 z-50 border-b border-zinc-200 bg-white/90 backdrop-blur">
-    <div class="mx-auto max-w-7xl px-8 py-5">
-      <h1 class="text-2xl font-semibold tracking-tight">
-        <a href="https://mbouldo.com" class="text-xl font-normal text-gray-600">mbouldo.com /</a>  Anki Tutorial
-      </h1>
-    </div>
-  </header>
+<header class="sticky top-0 z-50 border-b border-zinc-200 bg-white/90 backdrop-blur">
+  <div class="relative mx-auto max-w-7xl px-8 py-5">
+    <h1 class="text-2xl font-semibold tracking-tight">
+      <a href="https://mbouldo.com" class="text-xl font-normal text-gray-600">mbouldo.com /</a> Anki Tutorial
+    </h1>
+
+    <button id="sidebarToggle"
+      class="md:hidden absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded bg-zinc-100 text-blue-500 text-2xl leading-none">
+      ☰
+    </button>
+  </div>
+</header>
+
 
   <div class="mx-auto flex max-w-7xl">
-
     <!-- Sidebar -->
     
-<aside class="sticky top-18.25 h-[calc(100vh-73px)] w-96 shrink-0 overflow-y-auto border-r border-zinc-200 bg-white">
+<aside id="sidebar"
+  class="fixed md:static inset-y-0 left-0 z-50 w-80 md:w-96
+         bg-white border-r border-zinc-200
+         transform -translate-x-full md:translate-x-0
+         transition-transform duration-200 overflow-y-auto
+         md:shrink-0">
   <div class="p-6">
 
     <div class="mb-8">
@@ -180,30 +189,6 @@
   </div>
 </aside>
 
-    <!-- <aside class="sticky top-18.25 h-[calc(100vh-73px)] w-96 shrink-0 overflow-y-auto border-r border-zinc-200 bg-white">
-      <div class="p-6">
-
-        <div class="mb-8">
-          <h3 class="sidebar-heading">
-            Setup
-          </h3>
-
-          <nav class="space-y-1">
-            <a href="#" class="nav-link nav-link-active">
-              1. Install Anki
-            </a>
-
-            <a href="#" class="nav-link">
-              2. Turn on Sync
-            </a>
-
-            <a href="#" class="nav-link">
-              3. Enable FSRS
-            </a>
-          </nav>
-        </div>
-      </div>
-    </aside> -->
 
     <!-- Content -->
     <main class="flex-1 px-12 py-10">
@@ -285,7 +270,11 @@
 
         <!-- Article -->
         <article class="mt-10 w-[800px]  h-screen" >
-        
+        <h2 class="mt-12 text-2xl font-semibold tracking-tight">Finding AnKing Cards by Shelf Exam</h2>
+<p class="leading-8 text-zinc-700 my-4">AnKing also organizes cards by shelf exams using structured tags under the Step 2 tag tree. This allows targeted studying based on your current clerkship rotation.</p>
+<p class="leading-8 text-zinc-700 my-4">Open the <strong>Browser</strong> and navigate to the <strong>AK_Step2_v12</strong> tag set, then click the <strong>!Shelf</strong> tag and your specific rotation (ex: Peds).</p>
+<p class="leading-8 text-zinc-700 my-4">Use <strong>no_dupes</strong> to avoid duplicates, and it will be a mixed set that includes helpful Step 1 overlap, or use the tag <strong>only_step2</strong> if you want strictly shelf-focused material. (From what I heard, if you are very weak on fundamentals/foundational content, you might want the step 1 cards, however, if you are coming off a step 1 dedicated like me, you are ok with step_2_only)</p>
+<p class="leading-8 text-zinc-700 my-4">Once filtered, select the desired cards and <strong>Toggle Suspend</strong> to add them to your active study pool.</p>
           <!-- <p class="leading-8 text-zinc-700">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
             pellentesque efficitur lectus, nec pulvinar justo porttitor non.

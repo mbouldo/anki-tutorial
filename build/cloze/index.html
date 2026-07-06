@@ -8,20 +8,29 @@
 </head>
 <body class="bg-zinc-50 text-zinc-900">
 
-  <!-- Header -->
-  <header class="sticky top-0 z-50 border-b border-zinc-200 bg-white/90 backdrop-blur">
-    <div class="mx-auto max-w-7xl px-8 py-5">
-      <h1 class="text-2xl font-semibold tracking-tight">
-        <a href="https://mbouldo.com" class="text-xl font-normal text-gray-600">mbouldo.com /</a>  Anki Tutorial
-      </h1>
-    </div>
-  </header>
+<header class="sticky top-0 z-50 border-b border-zinc-200 bg-white/90 backdrop-blur">
+  <div class="relative mx-auto max-w-7xl px-8 py-5">
+    <h1 class="text-2xl font-semibold tracking-tight">
+      <a href="https://mbouldo.com" class="text-xl font-normal text-gray-600">mbouldo.com /</a> Anki Tutorial
+    </h1>
+
+    <button id="sidebarToggle"
+      class="md:hidden absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded bg-zinc-100 text-blue-500 text-2xl leading-none">
+      ☰
+    </button>
+  </div>
+</header>
+
 
   <div class="mx-auto flex max-w-7xl">
-
     <!-- Sidebar -->
     
-<aside class="sticky top-18.25 h-[calc(100vh-73px)] w-96 shrink-0 overflow-y-auto border-r border-zinc-200 bg-white">
+<aside id="sidebar"
+  class="fixed md:static inset-y-0 left-0 z-50 w-80 md:w-96
+         bg-white border-r border-zinc-200
+         transform -translate-x-full md:translate-x-0
+         transition-transform duration-200 overflow-y-auto
+         md:shrink-0">
   <div class="p-6">
 
     <div class="mb-8">
@@ -180,30 +189,6 @@
   </div>
 </aside>
 
-    <!-- <aside class="sticky top-18.25 h-[calc(100vh-73px)] w-96 shrink-0 overflow-y-auto border-r border-zinc-200 bg-white">
-      <div class="p-6">
-
-        <div class="mb-8">
-          <h3 class="sidebar-heading">
-            Setup
-          </h3>
-
-          <nav class="space-y-1">
-            <a href="#" class="nav-link nav-link-active">
-              1. Install Anki
-            </a>
-
-            <a href="#" class="nav-link">
-              2. Turn on Sync
-            </a>
-
-            <a href="#" class="nav-link">
-              3. Enable FSRS
-            </a>
-          </nav>
-        </div>
-      </div>
-    </aside> -->
 
     <!-- Content -->
     <main class="flex-1 px-12 py-10">
@@ -285,7 +270,22 @@
 
         <!-- Article -->
         <article class="mt-10 w-[800px]  h-screen" >
-        <h2 class="mt-12 text-2xl font-semibold tracking-tight">Creating Cloze Deletion Cards</h2><br><p class="leading-8 text-zinc-700 my-4">Cloze deletion cards hide portions of text and ask you to recall the missing information. They are one of the most commonly used card types because they are fast to create and work well for facts, lists, and concepts, and scale better than a simple front + back card.</p><br><p class="leading-8 text-zinc-700 my-4">To create a cloze card, select the text you want to hide and click the <strong>Cloze</strong> button, or manually wrap the text with cloze syntax.</p><br><p class="leading-8 text-zinc-700 my-4">Examples:</p><br><p class="leading-8 text-zinc-700 my-4"><code class="font-mono bg-zinc-200 px-1.5 py-0.5 rounded text-[0.95em]">The capital of France is {{c1::Paris}}</code></p><br><p class="leading-8 text-zinc-700 my-4">= <em>The capital of France is _____</em></p><br><p class="leading-8 text-zinc-700 my-4"><code class="font-mono bg-zinc-200 px-1.5 py-0.5 rounded text-[0.95em]">{{c1::Paris}} is the capital of {{c2::France}}</code></p><br><p class="leading-8 text-zinc-700 my-4">= <em>_____ is the capital of France</em> && <em>Paris is the capital of _____</em> (two cards, with two different blanks)</p><br><p class="leading-8 text-zinc-700 my-4"><code class="font-mono bg-zinc-200 px-1.5 py-0.5 rounded text-[0.95em]">The {{c1::heart}} pumps {{c1::blood}} throughout the body</code></p><br><p class="leading-8 text-zinc-700 my-4">= <em>The _____ pumps _____ throughout the body</em> (two blanks at card)</p><br><p class="leading-8 text-zinc-700 my-4">In the first example, one card is created. In the second example, two separate cards are created because <code class="font-mono bg-zinc-200 px-1.5 py-0.5 rounded text-[0.95em]">c1</code> and <code class="font-mono bg-zinc-200 px-1.5 py-0.5 rounded text-[0.95em]">c2</code> are different cloze numbers. In the third example, both deletions appear on the same card because they share the same cloze number (<code class="font-mono bg-zinc-200 px-1.5 py-0.5 rounded text-[0.95em]">c1</code>).</p><br><li class='list-disc pl-2 ml-5'>Most commonly used Anki note type</li><br><li class='list-disc pl-2 ml-5'><code class="font-mono bg-zinc-200 px-1.5 py-0.5 rounded text-[0.95em]">c1</code>, <code class="font-mono bg-zinc-200 px-1.5 py-0.5 rounded text-[0.95em]">c2</code>, <code class="font-mono bg-zinc-200 px-1.5 py-0.5 rounded text-[0.95em]">c3</code>, etc. create separate cards</li><br><li class='list-disc pl-2 ml-5'>Multiple <code class="font-mono bg-zinc-200 px-1.5 py-0.5 rounded text-[0.95em]">c1</code> deletions are hidden together on the same card</li><br><li class='list-disc pl-2 ml-5'>Best for facts, lists, and definitions</li><br>
+        <h2 class="mt-12 text-2xl font-semibold tracking-tight">Creating Cloze Deletion Cards</h2>
+<p class="leading-8 text-zinc-700 my-4">Cloze deletion cards hide portions of text and ask you to recall the missing information. They are one of the most commonly used card types because they are fast to create and work well for facts, lists, and concepts, and scale better than a simple front + back card.</p>
+<p class="leading-8 text-zinc-700 my-4">To create a cloze card, select the text you want to hide and click the <strong>Cloze</strong> button, or manually wrap the text with cloze syntax.</p>
+<p class="leading-8 text-zinc-700 my-4">Examples:</p>
+<p class="leading-8 text-zinc-700 my-4"><code class="font-mono bg-zinc-200 px-1.5 py-0.5 rounded text-[0.95em]">The capital of France is {{c1::Paris}}</code></p>
+<p class="leading-8 text-zinc-700 my-4">= <em>The capital of France is _____</em></p>
+<p class="leading-8 text-zinc-700 my-4"><code class="font-mono bg-zinc-200 px-1.5 py-0.5 rounded text-[0.95em]">{{c1::Paris}} is the capital of {{c2::France}}</code></p>
+<p class="leading-8 text-zinc-700 my-4">= <em>_____ is the capital of France</em> && <em>Paris is the capital of _____</em> (two cards, with two different blanks)</p>
+<p class="leading-8 text-zinc-700 my-4"><code class="font-mono bg-zinc-200 px-1.5 py-0.5 rounded text-[0.95em]">The {{c1::heart}} pumps {{c1::blood}} throughout the body</code></p>
+<p class="leading-8 text-zinc-700 my-4">= <em>The _____ pumps _____ throughout the body</em> (two blanks at card)</p>
+<p class="leading-8 text-zinc-700 my-4">In the first example, one card is created. In the second example, two separate cards are created because <code class="font-mono bg-zinc-200 px-1.5 py-0.5 rounded text-[0.95em]">c1</code> and <code class="font-mono bg-zinc-200 px-1.5 py-0.5 rounded text-[0.95em]">c2</code> are different cloze numbers. In the third example, both deletions appear on the same card because they share the same cloze number (<code class="font-mono bg-zinc-200 px-1.5 py-0.5 rounded text-[0.95em]">c1</code>).</p>
+<li class='list-disc pl-2 ml-5'>Most commonly used Anki note type</li>
+<li class='list-disc pl-2 ml-5'><code class="font-mono bg-zinc-200 px-1.5 py-0.5 rounded text-[0.95em]">c1</code>, <code class="font-mono bg-zinc-200 px-1.5 py-0.5 rounded text-[0.95em]">c2</code>, <code class="font-mono bg-zinc-200 px-1.5 py-0.5 rounded text-[0.95em]">c3</code>, etc. create separate cards</li>
+<li class='list-disc pl-2 ml-5'>Multiple <code class="font-mono bg-zinc-200 px-1.5 py-0.5 rounded text-[0.95em]">c1</code> deletions are hidden together on the same card</li>
+<li class='list-disc pl-2 ml-5'>Best for facts, lists, and definitions</li>
+
           <!-- <p class="leading-8 text-zinc-700">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
             pellentesque efficitur lectus, nec pulvinar justo porttitor non.

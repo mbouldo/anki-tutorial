@@ -8,20 +8,29 @@
 </head>
 <body class="bg-zinc-50 text-zinc-900">
 
-  <!-- Header -->
-  <header class="sticky top-0 z-50 border-b border-zinc-200 bg-white/90 backdrop-blur">
-    <div class="mx-auto max-w-7xl px-8 py-5">
-      <h1 class="text-2xl font-semibold tracking-tight">
-        <a href="https://mbouldo.com" class="text-xl font-normal text-gray-600">mbouldo.com /</a>  Anki Tutorial
-      </h1>
-    </div>
-  </header>
+<header class="sticky top-0 z-50 border-b border-zinc-200 bg-white/90 backdrop-blur">
+  <div class="relative mx-auto max-w-7xl px-8 py-5">
+    <h1 class="text-2xl font-semibold tracking-tight">
+      <a href="https://mbouldo.com" class="text-xl font-normal text-gray-600">mbouldo.com /</a> Anki Tutorial
+    </h1>
+
+    <button id="sidebarToggle"
+      class="md:hidden absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded bg-zinc-100 text-blue-500 text-2xl leading-none">
+      ☰
+    </button>
+  </div>
+</header>
+
 
   <div class="mx-auto flex max-w-7xl">
-
     <!-- Sidebar -->
     
-<aside class="sticky top-18.25 h-[calc(100vh-73px)] w-96 shrink-0 overflow-y-auto border-r border-zinc-200 bg-white">
+<aside id="sidebar"
+  class="fixed md:static inset-y-0 left-0 z-50 w-80 md:w-96
+         bg-white border-r border-zinc-200
+         transform -translate-x-full md:translate-x-0
+         transition-transform duration-200 overflow-y-auto
+         md:shrink-0">
   <div class="p-6">
 
     <div class="mb-8">
@@ -180,30 +189,6 @@
   </div>
 </aside>
 
-    <!-- <aside class="sticky top-18.25 h-[calc(100vh-73px)] w-96 shrink-0 overflow-y-auto border-r border-zinc-200 bg-white">
-      <div class="p-6">
-
-        <div class="mb-8">
-          <h3 class="sidebar-heading">
-            Setup
-          </h3>
-
-          <nav class="space-y-1">
-            <a href="#" class="nav-link nav-link-active">
-              1. Install Anki
-            </a>
-
-            <a href="#" class="nav-link">
-              2. Turn on Sync
-            </a>
-
-            <a href="#" class="nav-link">
-              3. Enable FSRS
-            </a>
-          </nav>
-        </div>
-      </div>
-    </aside> -->
 
     <!-- Content -->
     <main class="flex-1 px-12 py-10">
@@ -278,7 +263,12 @@
 
         <!-- Article -->
         <article class="mt-10 w-[800px]  h-screen" >
-        <h2 class="mt-12 text-2xl font-semibold tracking-tight">Welcome!</h2><br><p class="leading-8 text-zinc-700 my-4">Welcome to the Anki tutorial!</p><br><p class="leading-8 text-zinc-700 my-4">I used Anki heavily throughout medical school (mostly in preclinical, but definitely in clerkship year as well) and found it to be one of the most effective tools for long-term retention. It was my primary vehicle to get information to Step 1 and Step 2 over the course of learning it throughout the year. It widely used at <strong>NYU Grossman School of Medicine</strong>, and by students around the world.</p><br><p class="leading-8 text-zinc-700 my-4">This tutorial is designed around short keyframe animations and explanations so you can quickly see the steps to use Anki, find the information you need, and get Anki set up without sitting through a long video. My goal was to build a tool you can quickly return to throughout the year, as you need it. For example, you might use the <strong>uWorld Quesiton Finder</strong> later in the year, or in your clerkship year all togther.</p><br><p class="leading-8 text-zinc-700 my-4">I hope it's helpful. If you have questions, reach out any time!</p><br><p class="leading-8 text-zinc-700 my-4">&gt; Martin Bouldo (martin.bouldo@nyulangone.org)</p>
+        <h2 class="mt-12 text-2xl font-semibold tracking-tight">Welcome!</h2>
+<p class="leading-8 text-zinc-700 my-4">Welcome to the Anki tutorial!</p>
+<p class="leading-8 text-zinc-700 my-4">I used Anki heavily throughout medical school (mostly in preclinical, but definitely in clerkship year as well) and found it to be one of the most effective tools for long-term retention. It was my primary vehicle to get information to Step 1 and Step 2 over the course of learning it throughout the year. It widely used at <strong>NYU Grossman School of Medicine</strong>, and by students around the world.</p>
+<p class="leading-8 text-zinc-700 my-4">This tutorial is designed around short keyframe animations and explanations so you can quickly see the steps to use Anki, find the information you need, and get Anki set up without sitting through a long video. My goal was to build a tool you can quickly return to throughout the year, as you need it. For example, you might use the <strong>uWorld Quesiton Finder</strong> later in the year, or in your clerkship year all togther.</p>
+<p class="leading-8 text-zinc-700 my-4">I hope it's helpful. If you have questions, reach out any time!</p>
+<p class="leading-8 text-zinc-700 my-4">&gt; Martin Bouldo (martin.bouldo@nyulangone.org)</p>
           <!-- <p class="leading-8 text-zinc-700">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
             pellentesque efficitur lectus, nec pulvinar justo porttitor non.

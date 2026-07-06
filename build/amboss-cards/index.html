@@ -8,20 +8,29 @@
 </head>
 <body class="bg-zinc-50 text-zinc-900">
 
-  <!-- Header -->
-  <header class="sticky top-0 z-50 border-b border-zinc-200 bg-white/90 backdrop-blur">
-    <div class="mx-auto max-w-7xl px-8 py-5">
-      <h1 class="text-2xl font-semibold tracking-tight">
-        <a href="https://mbouldo.com" class="text-xl font-normal text-gray-600">mbouldo.com /</a>  Anki Tutorial
-      </h1>
-    </div>
-  </header>
+<header class="sticky top-0 z-50 border-b border-zinc-200 bg-white/90 backdrop-blur">
+  <div class="relative mx-auto max-w-7xl px-8 py-5">
+    <h1 class="text-2xl font-semibold tracking-tight">
+      <a href="https://mbouldo.com" class="text-xl font-normal text-gray-600">mbouldo.com /</a> Anki Tutorial
+    </h1>
+
+    <button id="sidebarToggle"
+      class="md:hidden absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded bg-zinc-100 text-blue-500 text-2xl leading-none">
+      ☰
+    </button>
+  </div>
+</header>
+
 
   <div class="mx-auto flex max-w-7xl">
-
     <!-- Sidebar -->
     
-<aside class="sticky top-18.25 h-[calc(100vh-73px)] w-96 shrink-0 overflow-y-auto border-r border-zinc-200 bg-white">
+<aside id="sidebar"
+  class="fixed md:static inset-y-0 left-0 z-50 w-80 md:w-96
+         bg-white border-r border-zinc-200
+         transform -translate-x-full md:translate-x-0
+         transition-transform duration-200 overflow-y-auto
+         md:shrink-0">
   <div class="p-6">
 
     <div class="mb-8">
@@ -180,30 +189,6 @@
   </div>
 </aside>
 
-    <!-- <aside class="sticky top-18.25 h-[calc(100vh-73px)] w-96 shrink-0 overflow-y-auto border-r border-zinc-200 bg-white">
-      <div class="p-6">
-
-        <div class="mb-8">
-          <h3 class="sidebar-heading">
-            Setup
-          </h3>
-
-          <nav class="space-y-1">
-            <a href="#" class="nav-link nav-link-active">
-              1. Install Anki
-            </a>
-
-            <a href="#" class="nav-link">
-              2. Turn on Sync
-            </a>
-
-            <a href="#" class="nav-link">
-              3. Enable FSRS
-            </a>
-          </nav>
-        </div>
-      </div>
-    </aside> -->
 
     <!-- Content -->
     <main class="flex-1 px-12 py-10">
@@ -285,7 +270,12 @@
 
         <!-- Article -->
         <article class="mt-10 w-[800px]  h-screen" >
-        <p class="leading-8 text-zinc-700 my-4">incomplete</p>
+        <h2 class="mt-12 text-2xl font-semibold tracking-tight">Getting Cards from Amboss Questions</h2>
+<p class="leading-8 text-zinc-700 my-4">Amboss integrates directly with AnKing by providing suggested Anki cards for specific questions. This lets you quickly convert missed/guessed/confusing questions  into targeted flashcards. Often times if I "had just known that one fact, I would've gotten the question right", which makes getting a flashcard for that question incredibly powerful.</p>
+<p class="leading-8 text-zinc-700 my-4">I used this feature a lot in dedicated step stuying (when using Amboss), or during clerkship.</p>
+<p class="leading-8 text-zinc-700 my-4">After completing a question, click <strong>“Get Anki Cards”</strong> to generate a set of relevant cards. You can review the suggested list and remove any that are not needed before copying the <strong>Anki query</strong>.</p>
+<p class="leading-8 text-zinc-700 my-4">Open Anki, go to the <strong>Browser</strong>, and paste the query into the search bar. This will filter the deck to the matching cards for that question.</p>
+<p class="leading-8 text-zinc-700 my-4">From there, review the results, select the cards you want, and <strong>Toggle Suspend</strong> to unarchive them into your main Anking deck.</p>
           <!-- <p class="leading-8 text-zinc-700">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
             pellentesque efficitur lectus, nec pulvinar justo porttitor non.

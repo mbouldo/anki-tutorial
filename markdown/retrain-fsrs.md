@@ -8,7 +8,4 @@ To retrain FSRS, open **Deck Options > FSRS > Optimize**. Anki stores deck setti
 
 Retraining about once per month is a reasonable, and forgetting is not the end of the world! FSRS remains effective even if you go several months without retraining, it might just not the most perfect version of itself for your unique review style!
 
-- Uses your own review history as training data
-- Recommended monthly retraining
-- Forgetting to retrain is OK
-- No cards or review data are lost
+

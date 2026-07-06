@@ -8,6 +8,3 @@ Set New cards/day and Maximum reviews/day to very high values (e.g. 9999). This 
 
 Enable FSRS in the options panel. This switches scheduling to a "AI" model that adapts to your performance over time. At first, this model uses an emperical model which works very well. It will only get better with time.
 
-Key points:
-- Remove daily caps on new and review limits
-- Enable FSRS

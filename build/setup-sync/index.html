@@ -8,20 +8,29 @@
 </head>
 <body class="bg-zinc-50 text-zinc-900">
 
-  <!-- Header -->
-  <header class="sticky top-0 z-50 border-b border-zinc-200 bg-white/90 backdrop-blur">
-    <div class="mx-auto max-w-7xl px-8 py-5">
-      <h1 class="text-2xl font-semibold tracking-tight">
-        <a href="https://mbouldo.com" class="text-xl font-normal text-gray-600">mbouldo.com /</a>  Anki Tutorial
-      </h1>
-    </div>
-  </header>
+<header class="sticky top-0 z-50 border-b border-zinc-200 bg-white/90 backdrop-blur">
+  <div class="relative mx-auto max-w-7xl px-8 py-5">
+    <h1 class="text-2xl font-semibold tracking-tight">
+      <a href="https://mbouldo.com" class="text-xl font-normal text-gray-600">mbouldo.com /</a> Anki Tutorial
+    </h1>
+
+    <button id="sidebarToggle"
+      class="md:hidden absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded bg-zinc-100 text-blue-500 text-2xl leading-none">
+      ☰
+    </button>
+  </div>
+</header>
+
 
   <div class="mx-auto flex max-w-7xl">
-
     <!-- Sidebar -->
     
-<aside class="sticky top-18.25 h-[calc(100vh-73px)] w-96 shrink-0 overflow-y-auto border-r border-zinc-200 bg-white">
+<aside id="sidebar"
+  class="fixed md:static inset-y-0 left-0 z-50 w-80 md:w-96
+         bg-white border-r border-zinc-200
+         transform -translate-x-full md:translate-x-0
+         transition-transform duration-200 overflow-y-auto
+         md:shrink-0">
   <div class="p-6">
 
     <div class="mb-8">
@@ -180,30 +189,6 @@
   </div>
 </aside>
 
-    <!-- <aside class="sticky top-18.25 h-[calc(100vh-73px)] w-96 shrink-0 overflow-y-auto border-r border-zinc-200 bg-white">
-      <div class="p-6">
-
-        <div class="mb-8">
-          <h3 class="sidebar-heading">
-            Setup
-          </h3>
-
-          <nav class="space-y-1">
-            <a href="#" class="nav-link nav-link-active">
-              1. Install Anki
-            </a>
-
-            <a href="#" class="nav-link">
-              2. Turn on Sync
-            </a>
-
-            <a href="#" class="nav-link">
-              3. Enable FSRS
-            </a>
-          </nav>
-        </div>
-      </div>
-    </aside> -->
 
     <!-- Content -->
     <main class="flex-1 px-12 py-10">
@@ -285,7 +270,11 @@
 
         <!-- Article -->
         <article class="mt-10 w-[800px]  h-screen" >
-        <h2 class="mt-12 text-2xl font-semibold tracking-tight">Setting Up Sync</h2><br><p class="leading-8 text-zinc-700 my-4">AnkiWeb Sync allows you to back up your collection online and keep your cards synchronized across multiple devices. It is strongly recommended, even if you only use Anki on a single computer. I use it to sync my current progress from my computer to my iPhone and vice-versa. Also, it helps to just keep a backup of all my reviews/decks in the cloud.</p><br><p class="leading-8 text-zinc-700 my-4">To set up sync, click the Sync button in the top-right corner of Anki and sign in with your AnkiWeb account. If you do not have an account, you can create one for free on AnkiWeb. After setup, Anki will automatically sync your cards, scheduling information, media, and review history whenever you sync.</p><br><p class="leading-8 text-zinc-700 my-4">Syncing after big changes (like importing a big deck) may take some time to upload to the server!</p><br><p class="leading-8 text-zinc-700 my-4"><a href="https://ankiweb.net/account/signup" target="_blank" class="underline text-blue-500" rel="noopener noreferrer">https://ankiweb.net/account/signup</a></p>
+        <h2 class="mt-12 text-2xl font-semibold tracking-tight">Setting Up Sync</h2>
+<p class="leading-8 text-zinc-700 my-4">AnkiWeb Sync allows you to back up your collection online and keep your cards synchronized across multiple devices. It is strongly recommended, even if you only use Anki on a single computer. I use it to sync my current progress from my computer to my iPhone and vice-versa. Also, it helps to just keep a backup of all my reviews/decks in the cloud.</p>
+<p class="leading-8 text-zinc-700 my-4">To set up sync, click the Sync button in the top-right corner of Anki and sign in with your AnkiWeb account. If you do not have an account, you can create one for free on AnkiWeb. After setup, Anki will automatically sync your cards, scheduling information, media, and review history whenever you sync.</p>
+<p class="leading-8 text-zinc-700 my-4">Syncing after big changes (like importing a big deck) may take some time to upload to the server!</p>
+<p class="leading-8 text-zinc-700 my-4"><a href="https://ankiweb.net/account/signup" target="_blank" class="underline text-blue-500" rel="noopener noreferrer">https://ankiweb.net/account/signup</a></p>
           <!-- <p class="leading-8 text-zinc-700">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
             pellentesque efficitur lectus, nec pulvinar justo porttitor non.
