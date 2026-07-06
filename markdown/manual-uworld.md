@@ -10,4 +10,7 @@ Review the resulting cards, select the ones you want, and **Toggle Suspend** to 
 
 
 ## Note
-Doing this manually is kind of a pain, so someone made an addon that lets you just paste the question id into a box and it will automatically wrap and search for the cards correctly. See next tutorial!
+This step requires **Anking**, because the anki cards are located in that superdeck. See above steps on installation and setup of Anking!
+
+Also, doing this manually is kind of a pain, so someone made an addon that lets you just paste the question id into a box and it will automatically wrap and search for the cards correctly. See next tutorial!
+

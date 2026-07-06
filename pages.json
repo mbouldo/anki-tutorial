@@ -56,8 +56,8 @@
         "id": "enable-sync",
         "name": "Enable Syncing",
         "route": "setup-sync",
-        "sidebarTitle": "Eanble Syncing",
-        "breadcrumb": "Eanble Syncing",
+        "sidebarTitle": "Enable Syncing",
+        "breadcrumb": "Enable Syncing",
         "bodyPath": "markdown/sync.md",
         "videoPath": "/src/videos/sync.mp4",
         "stops": [
@@ -79,7 +79,7 @@
           },
           {
             "t": 16,
-            "text": "5. Press OK to verify your credentails. Anki will now try to sync!"
+            "text": "5. Press OK to verify your credentials. Anki will now try to sync!"
           },
           {
             "t": 18,
@@ -240,8 +240,8 @@
         "id": "cloze",
         "name": "Create a Cloze Deletion Card",
         "route": "cloze",
-        "sidebarTitle": "Create an Cloze Deletion Card",
-        "breadcrumb": "Create an Cloze Deletion Card",
+        "sidebarTitle": "Create a Cloze Deletion Card",
+        "breadcrumb": "Create a Cloze Deletion Card",
         "bodyPath": "markdown/cloze.md",
         "videoPath": "/src/videos/cloze.mp4",
         "stops": [
@@ -504,7 +504,7 @@
           },
           {
             "t": 29.98,
-            "text": "I will select all of them (CTRL + A), and unsuspsend them"
+            "text": "I will select all of them (CTRL + A), and unsuspend them"
           },
           {
             "t": 30.28,
@@ -728,7 +728,7 @@
           },
           {
             "t": 9.37,
-            "text": "These are the cards found for this particular question (ex: uWorld quesiton #3110 has 2 Anking Cards)"
+            "text": "These are the cards found for this particular question (ex: uWorld question #3110 has 2 Anking Cards)"
           },
           {
             "t": 14.93,

@@ -1,32 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="/src/build/output.css" rel="stylesheet">
   <title>Anki Tutorial</title>
 </head>
+
 <body class="bg-zinc-50 text-zinc-900">
 
-<header class="sticky top-0 z-50 border-b border-zinc-200 bg-white/90 backdrop-blur">
-  <div class="relative mx-auto max-w-7xl px-8 py-5">
-    <h1 class="text-2xl font-semibold tracking-tight">
-      <a href="https://mbouldo.com" class="text-xl font-normal text-gray-600">mbouldo.com /</a> Anki Tutorial
-    </h1>
+  <header class="sticky top-0 z-50 border-b border-zinc-200 bg-white/90 backdrop-blur">
+    <div class="relative mx-auto flex max-w-7xl items-center justify-between px-8 py-5">
+      <h1 class="text-2xl font-semibold tracking-tight">
+        <a href="https://mbouldo.com" class="text-xl font-normal text-gray-600 hover:text-gray-800">
+          mbouldo.com /
+        </a>
+        <a href="{{ROOT_DIR}}">Anki Tutorial</a>
+      </h1>
 
-    <button id="sidebarToggle"
-      class="md:hidden absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded bg-zinc-100 text-blue-500 text-2xl leading-none">
-      ☰
-    </button>
-  </div>
-</header>
+      <div class="flex items-center gap-3">
+        <a href="https://github.com/mbouldo/anki-tutorial" target="_blank" rel="noopener noreferrer"
+          class="hidden md:flex items-center gap-2 text-gray-600 hover:text-black transition-colors"
+          aria-label="GitHub repository">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-6 w-6 fill-current">
+            <path
+              d="M12 .5C5.65.5.5 5.65.5 12a11.5 11.5 0 008 10.94c.58.1.79-.25.79-.56v-2.16c-3.25.71-3.94-1.39-3.94-1.39-.53-1.36-1.3-1.72-1.3-1.72-1.06-.73.08-.72.08-.72 1.17.08 1.79 1.2 1.79 1.2 1.04 1.79 2.73 1.27 3.4.97.11-.75.41-1.27.74-1.56-2.6-.3-5.34-1.3-5.34-5.77 0-1.27.45-2.31 1.2-3.12-.12-.3-.52-1.52.11-3.17 0 0 .98-.31 3.2 1.19a11.1 11.1 0 015.82 0c2.22-1.5 3.2-1.19 3.2-1.19.63 1.65.23 2.87.11 3.17.75.81 1.2 1.85 1.2 3.12 0 4.48-2.75 5.47-5.36 5.76.42.37.8 1.1.8 2.23v3.3c0 .31.21.67.8.56A11.5 11.5 0 0023.5 12C23.5 5.65 18.35.5 12 .5z" />
+          </svg>
+          <span class="text-sm">Source Code</span>
+        </a>
+
+        <button id="sidebarToggle" class="md:hidden p-2 rounded  text-black cursor-pointer text-2xl leading-none">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+
+        </button>
+      </div>
+    </div>
+  </header>
 
 
   <div class="mx-auto flex max-w-7xl">
     <!-- Sidebar -->
     
 <aside id="sidebar"
-  class="fixed md:static inset-y-0 left-0 z-50 w-80 md:w-96
+  class="fixed md:static inset-y-0 left-0 z-40 w-80 md:w-96
          bg-white border-r border-zinc-200
          transform -translate-x-full md:translate-x-0
          transition-transform duration-200 overflow-y-auto
@@ -58,7 +78,7 @@
       
         <a href="/src/build/setup-sync/"
            class="nav-link ">
-          2. Eanble Syncing
+          2. Enable Syncing
         </a>
       
         <a href="/src/build/configure-settings/"
@@ -91,7 +111,7 @@
       
         <a href="/src/build/cloze/"
            class="nav-link ">
-          4. Create an Cloze Deletion Card
+          4. Create a Cloze Deletion Card
         </a>
       
         <a href="/src/build/image-occlusion/"
@@ -196,21 +216,17 @@
       <div class="mx-auto max-w-4xl">
 
         <!-- Breadcrumb -->
-         
+        
 <div class="mb-8 text-sm text-zinc-500">
   <span class="font-medium text-zinc-900">Setup</span>
   <span class="mx-2">/</span>
   Install Anki
 </div>
 
-        <!-- <div class="mb-8 text-sm text-zinc-500">
-          <span class="font-medium text-zinc-900">Setup</span>
-          <span class="mx-2">/</span>
-          Install Anki
-        </div> -->
 
         <!-- Video Player Wrapper -->
-        <section id="playerWrap" class="aspect-video w-full overflow-hidden rounded-xl bg-black relative " {{HIDE_INDEX}}>
+        <section id="playerWrap" class="aspect-video w-full overflow-hidden rounded-xl bg-black relative "
+          {{HIDE_INDEX}}>
 
           <!-- progress bar segements-->
           <div id="progressBar" class="absolute top-2 left-1/2 -translate-x-1/2 flex gap-1 z-20"></div>
@@ -220,7 +236,7 @@
             class="absolute top-3 left-3 z-10 rounded-lg bg-black/60 text-white text-xs font-medium px-2.5 py-1.5 tabular-nums">
           </div>
 
-      
+          
 <video id="player"
   src="/src/videos/install-anki.mp4"
   class="absolute inset-0 w-full h-full object-contain block"
@@ -238,8 +254,8 @@
           <!-- prev -->
           <button id="prevBtn" aria-label="Previous step"
             class="absolute left-3 top-1/2 -translate-y-1/2 z-10 rounded-full bg-black/60 text-white ">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-              class="size-6">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="size-6">
               <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
             </svg>
           </button>
@@ -247,8 +263,8 @@
           <!-- next -->
           <button id="nextBtn" aria-label="Next step"
             class="absolute right-3 top-1/2 -translate-y-1/2 z-10 rounded-full bg-black/60 text-white ">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-              class="size-6">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="size-6">
               <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
             </svg>
           </button>
@@ -259,8 +275,8 @@
                                     rounded-lg bg-black/60 text-white p-2 hover:bg-black/80
                                     transition-all duration-200
                                     focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-black">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-              class="size-6">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="size-6">
               <path stroke-linecap="round" stroke-linejoin="round"
                 d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15" />
             </svg>
@@ -269,61 +285,18 @@
         </section>
 
         <!-- Article -->
-        <article class="mt-10 w-[800px]  h-screen" >
-        <h2 class="mt-12 text-2xl font-semibold tracking-tight">Installing Anki</h2>
+        <article class="mt-10 w-full max-w-[800px] px-4 md:px-0 h-screenn">
+          <h2 class="mt-12 text-2xl font-semibold tracking-tight">Installing Anki</h2>
 <p class="leading-8 text-zinc-700 my-4">To install Anki, download the latest version from <a href="https://apps.ankiweb.net/" target="_blank" class="underline text-blue-500" rel="noopener noreferrer">https://apps.ankiweb.net/</a> and follow the installer for your operating system. Usually, just clicking through the wizard is enough to get it working. Once I had an issue with a missing driver/library, but I was booting from Linux. If you are unable to get it working, feel free to reach out!</p>
 
-          <!-- <p class="leading-8 text-zinc-700">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
-            pellentesque efficitur lectus, nec pulvinar justo porttitor non.
-            Aliquam scelerisque mi nec sagittis pretium.
-          </p>
-
-          <p class="mt-6 leading-8 text-zinc-700">
-            Cras aliquet justo et orci porta, ut ornare enim egestas. Mauris
-            cursus augue non imperdiet auctor, massa turpis efficitur neque,
-            ac semper tellus lorem nec libero.
-          </p>
-
-          <h2 class="mt-12 text-2xl font-semibold tracking-tight">
-            Why Install Anki?
-          </h2>
-
-          <p class="mt-4 leading-8 text-zinc-700">
-            Anki is the standard spaced repetition platform used by most medical
-            students. Setting it up correctly now avoids synchronization and
-            scheduling issues later.
-          </p>
-
-          <ul class="mt-6 space-y-3 text-zinc-700">
-            <li>• Free and open source</li>
-            <li>• Syncs across devices</li>
-            <li>• Supports FSRS scheduling</li>
-            <li>• Works with AnKing</li>
-          </ul> -->
-
         </article>
-
-        <!-- Footer Nav -->
-        <!-- <div class="mt-16 flex items-center justify-between border-t border-zinc-200 pt-8">
-
-          <button class="btn btn-secondary">
-            Previous
-          </button>
-
-          <button class="btn btn-primary">
-            Next
-          </button>
-
-        </div> -->
-
       </div>
 
     </main>
 
   </div>
   <script>
-     const CONFIG_VIDEO_STOPS = [
+    const CONFIG_VIDEO_STOPS = [
   {
     "t": 0,
     "text": "1. Navigate to https://apps.ankiweb.net/ and click *Download*"
@@ -349,13 +322,8 @@
     "text": "5. Select your *language*, and confirm"
   }
 ];
-    //   const CONFIG_VIDEO_STOPS = [
-    //     { t: 0, text: "1. Select the *gear icon* on the deck you want to rename" },
-    //     { t: 1.250, text: `2. Select the *"Rename"* option` },
-    //     { t: 3, text: "3. Enter in you new deck name" },
-    //     { t: 6, text: "4. Click Ok" },
-    //   ];
   </script>
   <script src="/src/build/core.js"></script>
 </body>
+
 </html>

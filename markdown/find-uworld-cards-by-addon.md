@@ -9,3 +9,6 @@ Open Anki and go to **Tools > Add-ons > Get Add-ons**, then paste the code and c
 Once installed, open **Tools > Find cards from UWorld test**, paste one or more question IDs (for example `3110, 9810`), and run the search.
 
 The matching cards will appear. Select the ones you want and **Toggle Suspend** to activate them to study.
+
+## Note
+This step requires **Anking**, because the anki cards are located in that superdeck. See above steps on installation and setup of Anking!

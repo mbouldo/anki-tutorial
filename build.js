@@ -22,7 +22,7 @@ function copyFile(src, dest) {
 function buildSidebar(data, currentRoute) {
   let html = `
 <aside id="sidebar"
-  class="fixed md:static inset-y-0 left-0 z-50 w-80 md:w-96
+  class="fixed md:static inset-y-0 left-0 z-40 w-80 md:w-96
          bg-white border-r border-zinc-200
          transform -translate-x-full md:translate-x-0
          transition-transform duration-200 overflow-y-auto

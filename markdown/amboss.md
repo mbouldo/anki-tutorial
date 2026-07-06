@@ -9,3 +9,6 @@ After completing a question, click **“Get Anki Cards”** to generate a set of
 Open Anki, go to the **Browser**, and paste the query into the search bar. This will filter the deck to the matching cards for that question.
 
 From there, review the results, select the cards you want, and **Toggle Suspend** to unarchive them into your main Anking deck.
+
+## Note
+This step requires **Anking**, because the anki cards are located in that superdeck. See above steps on installation and setup of Anking!

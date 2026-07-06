@@ -7,3 +7,6 @@ You end up retaining many cards because there is fundamental overlap between Ste
 Open the **Browser**, locate the relevant Step 1-only tag, and paste it into the search bar. This filters the deck to cards that are explicitly Step 1 and not cross-tagged with Step 2.
 
 Select all returned cards and **Toggle Suspend** to activate or deactivate them as needed for your workflow. This helps reduce overlap and keeps your study set aligned with your current exam focus.
+
+## Note
+This step requires **Anking**, because the anki cards are located in that superdeck. See above steps on installation and setup of Anking!

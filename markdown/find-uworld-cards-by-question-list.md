@@ -9,3 +9,6 @@ From the review screen, open **Question List** and copy the full set of question
 Open Anki, go to **Tools > Find cards from uWorld Test** (requires the add-on), and paste the copied IDs into the input field.
 
 Anki will return all cards linked to those questions. You can review the results and selectively **Toggle Suspend** to activate only the cards you want for study.
+
+## Note
+This step requires **Anking**, because the anki cards are located in that superdeck. See above steps on installation and setup of Anking!
