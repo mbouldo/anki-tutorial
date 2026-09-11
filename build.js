@@ -1,19 +1,46 @@
 // ./tailwindcss -i src/input.css -o src/output.css
 const fs = require("fs");
 const path = require("path");
-
-
 const start = process.hrtime.bigint();
+
+const args = require("node:process").argv.slice(2);
+
+function getArg(name, fallback) {
+  const idx = args.indexOf(`--${name}`);
+  if (idx === -1) return fallback;
+  return args[idx + 1] || fallback;
+}
+
+const SERVER_DIR = getArg("server_dir", "/src/build");
+const VIDEO_DIR = getArg("video_dir", "/src");
+const CACHE_VER = 5; // required for ext. stylesheets if page gets cached to force refresh
+
+console.log("SERVER_DIR:", SERVER_DIR);
+console.log("VIDEO_DIR:", VIDEO_DIR);
 
 const data = JSON.parse(fs.readFileSync("pages.json", "utf8"));
 const shell = fs.readFileSync("./index-shell.html", "utf8");
 
-const SERVER_DIR = `/src/build`;
-const ROOTPATH = path.join(__dirname, "");
+const ROOTPATH = path.join(__dirname, ""); // used to extract markdown files relative to dev PC 
+const CANONICAL_URL_PATH_BASE = 'https://mbouldo.com/anki-tutorial';
 
 function copyFile(src, dest) {
   fs.mkdirSync(path.dirname(dest), { recursive: true });
   fs.copyFileSync(src, dest);
+}
+
+function getMetadataObj(page, fallback = "(NOT SET)") {
+  return {
+    title: 'Anki Tutorial | ' + page.sidebarTitle || fallback,
+    description: page.description || fallback,
+    canonical: CANONICAL_URL_PATH_BASE + '/' + page.route || fallback,
+    ogImage: SERVER_DIR + '/' + 'og.png' || fallback,
+    author: page.author || "Martin Bouldo",
+    publishedTime: page.publishedTime || fallback,
+    modifiedTime: page.modifiedTime || fallback,
+    siteName: "Anki Tutorial",
+    route: page.route || ""
+  };
 }
 
 /* ---------------------------
@@ -22,11 +49,11 @@ function copyFile(src, dest) {
 function buildSidebar(data, currentRoute) {
   let html = `
 <aside id="sidebar"
-  class="fixed md:static inset-y-0 left-0 z-40 w-80 md:w-96
+  class="fixed lg:static inset-y-0 left-0 z-40 w-80 lg:w-96 mt-20 lg:mt-0
          bg-white border-r border-zinc-200
-         transform -translate-x-full md:translate-x-0
+         transform -translate-x-full lg:translate-x-0
          transition-transform duration-200 overflow-y-auto
-         md:shrink-0">
+         lg:shrink-0">
   <div class="p-6">
 `;
 
@@ -96,16 +123,16 @@ function compileMarkdown(md = "") {
 
 
   // inline code
-html = html.replace(
-  /`([^`]+)`/g,
-  `<code class="font-mono bg-zinc-200 px-1.5 py-0.5 rounded text-[0.95em]">$1</code>`
-);
+  html = html.replace(
+    /`([^`]+)`/g,
+    `<code class="font-mono bg-zinc-200 px-1.5 py-0.5 rounded text-[0.95em]">$1</code>`
+  );
 
-// bold
-html = html.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+  // bold
+  html = html.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
 
-// italic
-html = html.replace(/(^|[^*])\*(?!\*)(.+?)\*/g, "$1<em>$2</em>");
+  // italic
+  html = html.replace(/(^|[^*])\*(?!\*)(.+?)\*/g, "$1<em>$2</em>");
 
   
   // italic (simple)
@@ -158,7 +185,7 @@ function buildStopsArray(page) {
 ----------------------------*/
 function buildBreadcrumb(page, groupName) {
   return `
-<div class="mb-8 text-sm text-zinc-500">
+<div class="mb-8 text-sm ml-4 lg:ml-2 text-zinc-500">
   <span class="font-medium text-zinc-900">${groupName}</span>
   <span class="mx-2">/</span>
   ${page.breadcrumb}
@@ -181,20 +208,29 @@ function buildPage(page, sidebarHTML, groupName) {
   const hasVideo = !!page.videoPath;
 
   let html = shell;
-
-  html = html.split("{{CSSPATH}}").join(`${SERVER_DIR}/output.css`);
-  html = html.split("{{JSPATH}}").join(`${SERVER_DIR}/core.js`);
-
-  html = html.split("{{SIDEBAR}}").join(sidebarHTML);
-  html = html.split("{{BREADCRUMB}}").join(breadcrumb);
-  html = html.split("{{ARTICLE}}").join(articleHTML);
-
-  html = html.split("{{STOPS_ARRAY}}").join(stopsArray);
+  const metadata = getMetadataObj(page);
+  html = html
+    .replaceAll("{{CACHE_VER}}", CACHE_VER)
+    .replaceAll("{{PAGE_TITLE}}", metadata.title)
+    .replaceAll("{{META_DESCRIPTION}}", metadata.description)
+    .replaceAll("{{CANONICAL_URL}}", metadata.canonical)
+    .replaceAll("{{OG_IMAGE}}", metadata.ogImage)
+    .replaceAll("{{PAGE_AUTHOR}}", metadata.author)
+    .replaceAll("{{PUBLISHED_TIME}}", metadata.publishedTime)
+    .replaceAll("{{MODIFIED_TIME}}", metadata.modifiedTime)
+    .replaceAll("{{SITE_NAME}}", metadata.siteName)
+    .replaceAll("{{SERVER_DIR}}", SERVER_DIR)
+    .replaceAll("{{CSSPATH}}", `${SERVER_DIR}/output.css`)
+    .replaceAll("{{JSPATH}}", `${SERVER_DIR}/core.js`)
+    .replaceAll("{{SIDEBAR}}", sidebarHTML)
+    .replaceAll("{{BREADCRUMB}}", breadcrumb)
+    .replaceAll("{{ARTICLE}}", articleHTML)
+    .replaceAll("{{STOPS_ARRAY}}", stopsArray);
 
   if (page.videoPath!="") {
     html = html.split("{{VIDEO_BLOCK}}").join(`
 <video id="player"
-  src="${page.videoPath}"
+  src="${VIDEO_DIR}/${page.videoPath}"
   class="absolute inset-0 w-full h-full object-contain block"
   preload="auto"
   playsinline
@@ -229,6 +265,13 @@ function buildAll(data) {
   // assets
   copyFile("./output.css", "./build/output.css");
   copyFile("./core.js", "./build/core.js");
+
+  // favicons
+  copyFile("./lib/favicons/favicon.ico", "./build/favicon.ico");
+  copyFile("./lib/favicons/favicon.svg", "./build/favicon.svg");
+  copyFile("./lib/favicons/favicon-96x96.png", "./build/favicon-96x96.png");
+  copyFile("./lib/favicons/apple-touch-icon.png", "./build/apple-touch-icon.png");
+  copyFile("./lib/favicons/site.webmanifest", "./build/site.webmanifest");
 }
 
 /* ---------------------------

@@ -22,9 +22,10 @@
         "name": "Install Anki",
         "route": "install-anki",
         "sidebarTitle": "Install Anki",
+        "description": "Step-by-step walkthrough for installing Anki on your system and completing initial setup.",
         "breadcrumb": "Install Anki",
         "bodyPath": "markdown/install-anki.md",
-        "videoPath": "/src/videos/install-anki.mp4",
+        "videoPath": "/videos/install-anki.mp4",
         "stops": [
           {
             "t": 0,
@@ -57,9 +58,10 @@
         "name": "Enable Syncing",
         "route": "setup-sync",
         "sidebarTitle": "Enable Syncing",
+        "description": "Guide to enabling Anki sync, creating an account, and syncing your decks across devices.",
         "breadcrumb": "Enable Syncing",
         "bodyPath": "markdown/sync.md",
-        "videoPath": "/src/videos/sync.mp4",
+        "videoPath": "/videos/sync.mp4",
         "stops": [
           {
             "t": 0,
@@ -92,9 +94,10 @@
         "name": "Configure Settings",
         "route": "configure-settings",
         "sidebarTitle": "Configure Settings",
+        "description": "How to configure optimal Anki settings including FSRS, new cards, and review limits for efficient learning.",
         "breadcrumb": "Configure Settings",
         "bodyPath": "markdown/settings.md",
-        "videoPath": "/src/videos/settings.mp4",
+        "videoPath": "/videos/settings.mp4",
         "stops": [
           {
             "t": 0,
@@ -136,9 +139,10 @@
         "name": "Retrain FSRS",
         "route": "retrain-fsrs",
         "sidebarTitle": "Retrain FSRS",
+        "description": "Retrain FSRS scheduling model using your review history to improve Anki interval predictions.",
         "breadcrumb": "Retrain FSRS",
         "bodyPath": "markdown/retrain-fsrs.md",
-        "videoPath": "/src/videos/retrain-fsrs-med.mp4",
+        "videoPath": "/videos/retrain-fsrs-med.mp4",
         "stops": [
           {
             "t": 0,
@@ -171,9 +175,10 @@
         "name": "Install Addon (Heatmap)",
         "route": "install-addon-heatmap",
         "sidebarTitle": "Install Addon (Heatmap)",
+        "description": "Install and configure Anki add-ons (example: Heatmap) using the official add-on code system.",
         "breadcrumb": "Install Addon (Heatmap)",
         "bodyPath": "markdown/install-addon-heatmap.md",
-        "videoPath": "/src/videos/install-addon-heatmap.mp4",
+        "videoPath": "/videos/install-addon-heatmap.mp4",
         "stops": [
           {
             "t": 0,
@@ -214,9 +219,10 @@
         "name": "Rename a Deck",
         "route": "rename-deck",
         "sidebarTitle": "Rename a Deck",
+        "description": "Rename an Anki deck and organize your collection structure efficiently.",
         "breadcrumb": "Rename a Deck",
         "bodyPath": "markdown/rename.md",
-        "videoPath": "/src/videos/rename-c.mp4",
+        "videoPath": "/videos/rename-c.mp4",
         "stops": [
           {
             "t": 0,
@@ -241,9 +247,10 @@
         "name": "Create a Cloze Deletion Card",
         "route": "cloze",
         "sidebarTitle": "Create a Cloze Deletion Card",
+        "description": "Create cloze deletion cards in Anki for active recall using fill-in-the-blank formatting.",
         "breadcrumb": "Create a Cloze Deletion Card",
         "bodyPath": "markdown/cloze.md",
-        "videoPath": "/src/videos/cloze.mp4",
+        "videoPath": "/videos/cloze.mp4",
         "stops": [
           {
             "t": 0,
@@ -300,9 +307,10 @@
         "name": "Create an Image Occlusion Card",
         "route": "image-occlusion",
         "sidebarTitle": "Create an Image Occlusion Card",
+        "description": "Create image occlusion cards in Anki by masking parts of diagrams for visual memorization.",
         "breadcrumb": "Image Occlusion Card",
         "bodyPath": "markdown/image-occlusion.md",
-        "videoPath": "/src/videos/image-occlusion.mp4",
+        "videoPath": "/videos/image-occlusion.mp4",
         "stops": [
           {
             "t": 0,
@@ -355,9 +363,10 @@
         "name": "import-brightspace-cards",
         "route": "import-brightspace-cards",
         "sidebarTitle": "Import Brightspace Cards (NYUGSOM)",
+        "description": "Import and organize Anki cards downloaded from a Brightspace Course into your collection.",
         "breadcrumb": "import-brightspace-cards",
         "bodyPath": "/markdown/import-brightspace-cards.md",
-        "videoPath": "/src/videos/import-brightspace-cards.mp4",
+        "videoPath": "/videos/import-brightspace-cards.mp4",
         "stops": [
           {
             "t": 2.46,
@@ -411,9 +420,10 @@
         "name": "Install Anking",
         "route": "install-anking",
         "sidebarTitle": "Install Anking",
+        "description": "Import and initialize the AnKing deck in Anki, then suspend all cards to finish setup.",
         "breadcrumb": "Install Anking",
         "bodyPath": "markdown/install-anking.md",
-        "videoPath": "/src/videos/install-anking.mp4",
+        "videoPath": "/videos/install-anking.mp4",
         "stops": [
           {
             "t": 0,
@@ -462,9 +472,10 @@
         "name": "Find Anking cards by Tag Tree",
         "route": "unsuspend-by-tag-tree",
         "sidebarTitle": "Find Anking cards by Tag Tree",
+        "description": "Navigate the Anki tag tree to locate AnKing cards by resource tags and unsuspend selected content.",
         "breadcrumb": "Find Anking cards by Tag Tree",
         "bodyPath": "markdown/unsuspend-by-tag-tree.md",
-        "videoPath": "/src/videos/unsuspend-by-tag-tree.mp4",
+        "videoPath": "/videos/unsuspend-by-tag-tree.mp4",
         "stops": [
           {
             "t": 2.74,
@@ -521,9 +532,10 @@
         "name": "Find Anking cards by Copied Tag",
         "route": "unsuspend-by-tag",
         "sidebarTitle": "Find Anking cards by Copied Tag",
+        "description": "Search and unsuspend AnKing cards using copied tag strings directly in Anki’s browser.",
         "breadcrumb": "Find Anking cards by Copied Tag",
         "bodyPath": "markdown/unsuspend-by-tag.md",
-        "videoPath": "/src/videos/unsuspend-by-tag.mp4",
+        "videoPath": "/videos/unsuspend-by-tag.mp4",
         "stops": [
           {
             "t": 1.7,
@@ -564,9 +576,10 @@
         "name": "Find Anking cards by Spreadsheet",
         "route": "unsuspend-by-spreadsheet",
         "sidebarTitle": "Find Anking cards by Spreadsheet",
+        "description": "Find and unsuspend AnKing cards using spreadsheet-provided tag strings for a given lecture.",
         "breadcrumb": "Find Anking cards by Spreadsheet",
         "bodyPath": "markdown/unsuspend-by-spreadsheet.md",
-        "videoPath": "/src/videos/unsuspend-by-spreadsheet.mp4",
+        "videoPath": "/videos/unsuspend-by-spreadsheet.mp4",
         "stops": [
           {
             "t": 0.73,
@@ -611,9 +624,10 @@
         "name": "Filter by High Yield",
         "route": "filter-by-high-yield",
         "sidebarTitle": "Filter by High Yield",
+        "description": "Filter AnKing cards by applying high-yield tags to refine and reduce study scope.",
         "breadcrumb": "Filter by High Yield",
         "bodyPath": "markdown/filter-by-high-yield.md",
-        "videoPath": "/src/videos/filter-by-high-yield.mp4",
+        "videoPath": "/videos/filter-by-high-yield.mp4",
         "stops": [
           {
             "t": 0.27,
@@ -667,9 +681,10 @@
         "name": "amboss",
         "route": "amboss-cards",
         "sidebarTitle": "Get Cards from Amboss Questions",
+        "description": "Search AnKing cards from AMBOSS questions using generated Anki queries and unsuspend relevant cards in Anki.",
         "breadcrumb": "amboss",
         "bodyPath": "markdown/amboss.md",
-        "videoPath": "/src/videos/amboss.mp4",
+        "videoPath": "/videos/amboss.mp4",
         "stops": [
           {
             "t": 5.8,
@@ -706,9 +721,10 @@
         "name": "Get Cards from uWorld Question (Manual)",
         "route": "manual-uworld",
         "sidebarTitle": "Get Cards from uWorld Question (Manual)",
+        "description": "Find AnKing cards from a specific UWorld question manually using question ID tagging in Anki.",
         "breadcrumb": "Get Cards from uWorld Question (Manual)",
         "bodyPath": "markdown/manual-uworld.md",
-        "videoPath": "/src/videos/find-uworld-cards-manually.mp4",
+        "videoPath": "/videos/find-uworld-cards-manually.mp4",
         "stops": [
           {
             "t": 0.85,
@@ -749,9 +765,10 @@
   "name": "Get Cards from uWorld Question (Addon)",
   "route": "find-uworld-cards-by-addon",
   "sidebarTitle": "Get Cards from uWorld Question (Addon)",
+  "description": "Install and use the Anki add-on to automatically retrieve AnKing cards from UWorld questions.",
   "breadcrumb": "Get Cards from uWorld Question (Addon)",
   "bodyPath": "markdown/find-uworld-cards-by-addon.md",
-  "videoPath": "/src/videos/find-uworld-cards-by-addon.mp4",
+  "videoPath": "/videos/find-uworld-cards-by-addon.mp4",
   "stops": [
     {
       "t": 1.24,
@@ -808,9 +825,10 @@
   "name": "Get Cards by uWorld Question List",
   "route": "find-uworld-cards-by-question-list",
   "sidebarTitle": "Get Cards by uWorld Question List",
+  "description": "Retrieve AnKing cards from a full list of UWorld question IDs and unsuspend relevant cards in bulk.",
   "breadcrumb": "Get Cards by uWorld Question List",
   "bodyPath": "markdown/find-uworld-cards-by-question-list.md",
-  "videoPath": "/src/videos/find-uworld-cards-by-question-list.mp4",
+  "videoPath": "/videos/find-uworld-cards-by-question-list.mp4",
   "stops": [
     {
       "t": 1.4,
@@ -852,9 +870,10 @@
         "name": "Suspend Step 1 only Cards",
         "route": "suspend-step-1-only-cards",
         "sidebarTitle": "Suspend Step 1 Only Cards",
+        "description": "Suspend Step 1-only tagged AnKing cards to control deck scope and reduce Step 2 overlap.",
         "breadcrumb": "Suspend Step 1 Only Cards",
         "bodyPath": "markdown/suspend-step-1-only-cards.md",
-        "videoPath": "/src/videos/suspend-step-1-only-cards.mp4",
+        "videoPath": "/videos/suspend-step-1-only-cards.mp4",
         "stops": [
           {
             "t": 1.57,
@@ -887,9 +906,10 @@
         "name": "Find Anking Cards by Shelf Exam",
         "route": "find-cards-by-shelf",
         "sidebarTitle": "Find Anking Cards by Shelf Exam",
+        "description": "Filter AnKing cards for clerkship shelf exams by rotation-specific tags and Step 2 priority content.",
         "breadcrumb": "Find Anking Cards by Shelf Exam",
         "bodyPath": "markdown/find-cards-by-shelf.md",
-        "videoPath": "/src/videos/find-cards-by-shelf.mp4",
+        "videoPath": "/videos/find-cards-by-shelf.mp4",
         "stops": [
           {
             "t": 2.02,

@@ -1,7 +1,10 @@
 
 
 // Elements
+
 const video = document.getElementById("player");
+
+// Will fail if no video tag
 const caption = document.getElementById("caption");
 const prevBtn = document.getElementById("prevBtn");
 const nextBtn = document.getElementById("nextBtn");
@@ -314,7 +317,7 @@ document.addEventListener("keydown", (e) => {
 
 
 // ---------- Init ----------
-function init() {
+function initVideoPlayer() {
   // Add final stop for video tmax
     CONFIG_VIDEO_STOPS.push({
       t: video.duration-0.25,
@@ -325,8 +328,11 @@ function init() {
   updateNavButtons();
 }
 
-video.addEventListener("loadedmetadata", init);
-if (video.readyState >= 1) init();
+//v3
+if(video){
+  video.addEventListener("loadedmetadata", initVideoPlayer);
+  if (video.readyState >= 1) initVideoPlayer();
+}
 
 
 
